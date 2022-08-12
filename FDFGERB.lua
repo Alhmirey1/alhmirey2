@@ -2351,7 +2351,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n• تم تحديث السورس '
 end
 if text == 'السيرفر' then
 if not msg.ControllerBot then 
-return send(msg_chat_id,msg_id,'\n*✠┊هذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*✠┊هذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
 end
 LuaTele.sendText(msg_chat_id,msg_id, io.popen([[
 linux_version=`lsb_release -ds`
