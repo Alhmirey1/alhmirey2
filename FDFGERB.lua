@@ -2339,14 +2339,35 @@ else
 return LuaTele.sendText(msg_chat_id,msg_id,"\n• لا توجد قناة في الاشتراك ارسل تغيير الاشتراك الاجباري","md",true)  
 end
 end
+
+
 if text == 'تحديث السورس' or text == 'تحديث سورس' then
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(1)..' ) ',"md",true)  
 end
 os.execute('rm -rf FDFGERB.lua')
-download('https://raw.githubusercontent.com/Fawazz77/Rhps/blob/main/FDFGERB.lua','FDFGERB.lua')
+download('https://raw.githubusercontent.com/Alhmirey1/alhmirey2/main/FDFGERB.lua','FDFGERB.lua')
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• تم تحديث السورس ',"md",true)  
 end
+if text == 'السيرفر' then
+if not msg.ControllerBot then 
+return send(msg_chat_id,msg_id,'\n*✠┊هذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
+end
+send(msg_chat_id,msg_id, io.popen([[
+linux_version=`lsb_release -ds`
+memUsedPrc=`free -m | awk 'NR==2{printf "%sMB/%sMB {%.2f%}\n", $3,$2,$3*100/$2 }'`
+HardDisk=`df -lh | awk '{if ($6 == "/") { print $3"/"$2" ~ {"$5"}" }}'`
+CPUPer=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
+uptime=`uptime | awk -F'( |,|:)+' '{if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes."}'`
+echo '✠┊✠┊⊱ { نظام التشغيل } ⊰✠┊ \n*»» '"$linux_version"'*' 
+echo '*------------------------------\n*✠┊✠┊⊱ { الذاكره العشوائيه } ⊰✠┊ \n*»» '"$memUsedPrc"'*'
+echo '*------------------------------\n*✠┊✠┊⊱ { وحـده الـتـخـزيـن } ⊰✠┊ \n*»» '"$HardDisk"'*'
+echo '*------------------------------\n*✠┊✠┊⊱ { الـمــعــالــج } ⊰✠┊ \n*»» '"`grep -c processor /proc/cpuinfo`""Core ~ {$CPUPer%} "'*'
+echo '*------------------------------\n*✠┊✠┊⊱ { الــدخــول } ⊰✠┊ \n*»» '`whoami`'*'
+echo '*------------------------------\n*✠┊✠┊⊱ { مـده تـشغيـل الـسـيـرفـر } ⊰✠┊ \n*»» '"$uptime"'*'
+]]):read('*all'),"md")
+end
+
 if text == 'جلب النسخه الاحتياطيه' or text == 'جلب نسخه احتياطيه' then
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(1)..' ) ',"md",true)  
