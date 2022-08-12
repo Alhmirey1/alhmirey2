@@ -2353,7 +2353,7 @@ if text == 'السيرفر' then
 if not msg.ControllerBot then 
 return send(msg_chat_id,msg_id,'\n*✠┊هذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
 end
-send(msg_chat_id,msg_id, io.popen([[
+LuaTele.sendText(msg_chat_id,msg_id, io.popen([[
 linux_version=`lsb_release -ds`
 memUsedPrc=`free -m | awk 'NR==2{printf "%sMB/%sMB {%.2f%}\n", $3,$2,$3*100/$2 }'`
 HardDisk=`df -lh | awk '{if ($6 == "/") { print $3"/"$2" ~ {"$5"}" }}'`
