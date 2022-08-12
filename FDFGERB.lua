@@ -126,6 +126,18 @@ if not req.ok then
 return false end 
 return req 
 end 
+function youtube_api_url(url_link)
+local url = io.popen('curl -s "https://moh-yen.org/api/youtube.php?url='..url_link..'"'):read('*a')
+local json = JSON.decode(url)
+local link = json.url
+local title = json.title
+local title = title:gsub("/","-") 
+local title = title:gsub("\n","-") 
+local title = title:gsub("|","-") 
+local title = title:gsub("'","-") 
+local title = title:gsub('"',"-") 
+return  title
+end
 function sendText(chat_id, text, reply_to_message_id, markdown) 
 send_api = "https://api.telegram.org/bot"..Token 
 local url = send_api.."/sendMessage?chat_id=" .. chat_id .. "&text=" .. URL.escape(text) 
@@ -8147,6 +8159,24 @@ else
 return LuaTele.sendText(msg_chat_id,msg_id,"• لم يتم تعيين ترحيب للمجموعه","md",true)   
 end 
 end
+
+if text then
+if text:match("^تحميل (.*)$") then
+local id = text:match("^تحميل (.*)$")
+local title = youtube_api_url(id)
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'تحميل صوت', data = msg.sender.user_id..'sound/'..id}, {text = 'تحميل فيديو', data = msg.sender.user_id..'video/'..id}, 
+},
+}
+}
+local txx = "["..title.."]("..id..")"
+LuaTele.sendText(msg.chat_id,msg.id,'※'..txx,"md",true, false, false, false, reply_markup)
+end
+end
+
 if text == "مسح الترحيب" or text == "حذف الترحيب" then 
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص : ( '..Controller_Num(7)..' ) ',"md",true)  
@@ -14000,6 +14030,41 @@ LuaTele.answerCallbackQuery(data.id, "• تم مغادره البوت من ال
 LuaTele.leaveChat(UserId)
 end
 
+if Text and Text:match('(%d+)sound/(.*)') then
+local xd = {Text:match('(%d+)sound/(.*)')}
+local UserId = xd[1]
+local id = xd[2]
+if tonumber(IdUser) == tonumber(UserId) then
+local title = youtube_api_url(id)
+local u = LuaTele.getUser(IdUser)
+LuaTele.answerCallbackQuery(data.id, "※ انتظر يتم التحميل ", true)
+
+LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
+os.execute("yt-dlp "..id.." -f 251 -o '"..title..".mp3'")
+LuaTele.sendAudio(ChatId,0,'./'..title..'.mp3',"※ ["..title.."]("..id..")\n※ حسب طلب ["..u.first_name.."](tg://user?id="..IdUser..")","md",nil,title,"alhmirey") 
+sleep(2)
+os.remove(""..title..".mp3")
+else
+LuaTele.answerCallbackQuery(data.id, "※ هذا الامر لا يخصك ", true)
+end
+end
+if Text and Text:match('(%d+)video/(.*)') then
+local xd = {Text:match('(%d+)video/(.*)')}
+local UserId = xd[1]
+local id = xd[2]
+if tonumber(IdUser) == tonumber(UserId) then
+local u = LuaTele.getUser(IdUser)
+LuaTele.answerCallbackQuery(data.id, "※ انتظر يتم التحميل ", true)
+local title = youtube_api_url(id)
+LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
+os.execute("yt-dlp "..id.." -f 18 -o '"..title..".mp4'")
+LuaTele.sendVideo(ChatId,0,'./'..title..'.mp4',"※ ["..title.."]("..id..")\n※ حسب طلب ["..u.first_name.."](tg://user?id="..IdUser..")","md") 
+sleep(4)
+os.remove(""..title..".mp4")
+else
+LuaTele.answerCallbackQuery(data.id, "※ هذا الامر لا يخصك ", true)
+end
+end
 
 if Text and Text:match('(%d+)/groupNumseteng//(%d+)') then
 local UserId = {Text:match('(%d+)/groupNumseteng//(%d+)')}
