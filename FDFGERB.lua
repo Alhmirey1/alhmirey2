@@ -103,6 +103,10 @@ LuaTele = luatele.set_config{api_id=2692371,api_hash='fe85fff033dfe0f328aeb02b4f
 function var(value)  
 print(serpent.block(value, {comment=false}))   
 end 
+function sleep(n)
+local t0 = clock()
+while clock() - t0 <= n do end
+end
 function chat_type(ChatId)
 if ChatId then
 local id = tostring(ChatId)
