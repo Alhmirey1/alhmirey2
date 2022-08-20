@@ -8798,27 +8798,7 @@ data = {
 return LuaTele.sendText(msg_chat_id, msg_id, "• الصلاحيات • ", 'md', false, false, false, false, reply_markup)
 end
 
-if Text and Text:match('(%d+)/dl(.*)') then
-local xd = {Text:match('(%d+)/dl(.*)')}
-local UserId = xd[1]
-local id = xd[2]
-if tonumber(IdUser) == tonumber(UserId) then
-local title = youtube_api_url(id)
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = 'تحميل صوت', data = IdUser..'sound/'..id}, {text = 'تحميل فيديو', data = IdUser..'video/'..id}, 
-},
-}
-}
-print(id)
-local txx = "["..title.."]("..id..")"
-LuaTele.editMessageText(ChatId,Msg_id,txx, 'md', true, false, reply_markup)
-else
-LuaTele.answerCallbackQuery(data.id, "※ هذا الامر لا يخصك ", true)
-end
-end
+
 
 if text == 'تنزيل الكل' and msg.reply_to_message_id ~= 0 then
 if not msg.Addictive then
@@ -14110,7 +14090,27 @@ else
 LuaTele.answerCallbackQuery(data.id, "※ هذا الامر لا يخصك ", true)
 end
 end
-
+if Text and Text:match('(%d+)/dl(.*)') then
+local xd = {Text:match('(%d+)/dl(.*)')}
+local UserId = xd[1]
+local id = xd[2]
+if tonumber(IdUser) == tonumber(UserId) then
+local title = youtube_api_url(id)
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'تحميل صوت', data = IdUser..'sound/'..id}, {text = 'تحميل فيديو', data = IdUser..'video/'..id}, 
+},
+}
+}
+print(id)
+local txx = "["..title.."]("..id..")"
+LuaTele.editMessageText(ChatId,Msg_id,txx, 'md', true, false, reply_markup)
+else
+LuaTele.answerCallbackQuery(data.id, "※ هذا الامر لا يخصك ", true)
+end
+end
 if Text and Text:match('(%d+)/groupNumseteng//(%d+)') then
 local UserId = {Text:match('(%d+)/groupNumseteng//(%d+)')}
 if tonumber(IdUser) == tonumber(UserId[1]) then
