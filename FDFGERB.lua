@@ -1,9 +1,9 @@
 --[[
-قناة ال
+قناة السورس
 ----
-dev: @Alhmirey
-dev2: @Alhmirey
-ch: @Alhmirey
+dev: @Alhmire
+dev2: @Alhmire
+ch: @Alhmire
 --]]
 URL     = require("./libs/url")
 JSON    = require("./libs/dkjson")
@@ -41,24 +41,24 @@ end
 os.execute('lua FDFGERB.lua')
 end
 if not Redis:get(SshId.."Info:Redis:User") then
-io.write('\27[1;31mارسل معرف Dev🎖 الان \nDeveloper UserName saved ↡\n\27[0;39;49m')
+io.write('\27[1;31mارسل معرف   الان \nDeveloper UserName saved ↡\n\27[0;39;49m')
 local UserSudo = io.read():gsub('@','')
 if UserSudo ~= '' then
-io.write('\n\27[1;34mتم حفظ معرف Dev🎖 \nDeveloper UserName saved \n\27[0;39;49m')
+io.write('\n\27[1;34mتم حفظ معرف   \nDeveloper UserName saved \n\27[0;39;49m')
 Redis:set(SshId.."Info:Redis:User",UserSudo)
 else
-print('\n\27[1;34mلم يتم حفظ معرف Dev🎖 \nDeveloper UserName not saved\n')
+print('\n\27[1;34mلم يتم حفظ معرف   \nDeveloper UserName not saved\n')
 end 
 os.execute('lua FDFGERB.lua')
 end
 if not Redis:get(SshId.."Info:Redis:User:ID") then
-io.write('\27[1;31mارسل ايدي Dev🎖 الان \nDeveloper ID saved ↡\n\27[0;39;49m')
+io.write('\27[1;31mارسل ايدي   الان \nDeveloper ID saved ↡\n\27[0;39;49m')
 local UserId = io.read()
 if UserId and UserId:match('(%d+)') then
-io.write('\n\27[1;34mتم حفظ ايدي Dev🎖 \nDeveloper ID saved \n\27[0;39;49m')
+io.write('\n\27[1;34mتم حفظ ايدي   \nDeveloper ID saved \n\27[0;39;49m')
 Redis:set(SshId.."Info:Redis:User:ID",UserId)
 else
-print('\n\27[1;34mلم يتم حفظ ايدي Dev🎖 \nDeveloper ID not saved\n')
+print('\n\27[1;34mلم يتم حفظ ايدي   \nDeveloper ID not saved\n')
 end 
 os.execute('lua FDFGERB.lua')
 end
@@ -198,7 +198,7 @@ Status = 'Ace🎖'
 elseif UserId == 1485149817 then
 Status = 'Ace🎖'
 elseif UserId == Sudo_Id then  
-Status = 'Dev🎖'
+Status = ' '
 elseif UserId == FDFGERB then
 Status = 'البوت'
 elseif DevelopersQ then
@@ -956,7 +956,7 @@ msg.Name_Controller = 'Ace🎖'
 msg.The_Controller = 1
 elseif The_ControllerAll(msg.sender.user_id) == true then  
 msg.The_Controller = 1
-msg.Name_Controller = 'Dev🎖'
+msg.Name_Controller = ' '
 elseif Redis:sismember(FDFGERB.."FDFGERB:DevelopersQ:Groups",msg.sender.user_id) == true then
 msg.The_Controller = 2
 msg.Name_Controller = 'Myth🎖️'
@@ -1721,11 +1721,11 @@ end
 if text and Redis:get(FDFGERB..'FDFGERB:GetTexting:DevFDFGERB'..msg_chat_id..':'..msg.sender.user_id) then
 if text == 'الغاء' or text == 'الغاء الامر' then 
 Redis:del(FDFGERB..'FDFGERB:GetTexting:DevFDFGERB'..msg_chat_id..':'..msg.sender.user_id)
-return LuaTele.sendText(msg_chat_id,msg_id,'• اهلا عزيزي , تم الغاء تغيير كليشه Dev🎖')
+return LuaTele.sendText(msg_chat_id,msg_id,'• اهلا عزيزي , تم الغاء تغيير كليشه  ')
 end
 Redis:set(FDFGERB..'FDFGERB:Texting:DevFDFGERB',text)
 Redis:del(FDFGERB..'FDFGERB:GetTexting:DevFDFGERB'..msg_chat_id..':'..msg.sender.user_id)
-return LuaTele.sendText(msg_chat_id,msg_id,'• تم حفظ كليشة Dev🎖')
+return LuaTele.sendText(msg_chat_id,msg_id,'• تم حفظ كليشة  ')
 end
 if Redis:get(FDFGERB.."FDFGERB:Redis:Id:all"..msg.chat_id..""..msg.sender.user_id) then 
 if text == 'الغاء' then 
@@ -1745,7 +1745,7 @@ data = {
 {text = '- الغاء الامر', data = msg.sender.user_id..'/delamrredis'},
 },
 {
-{text = 'قناة ال', url='https://t.me/Alhmirey'},
+{text = 'قناة السورس', url='https://t.me/Alhmire'},
 },
 }
 }
@@ -1769,7 +1769,7 @@ data = {
 {text = '- الغاء الامر', data = msg.sender.user_id..'/delamrredis'},
 },
 {
-{text = 'قناة ال', url='https://t.me/Alhmirey'},
+{text = 'قناة السورس', url='https://t.me/Alhmire'},
 },
 }
 }
@@ -1906,7 +1906,7 @@ data = {
 {text = '', data = msg.sender.user_id..'/delamrredis'},
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url='https://t.me/Alhmirey'},
+{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url='https://t.me/Alhmire'},
 },
 }
 }
@@ -2100,7 +2100,7 @@ data = {
 {text = '- الغاء الامر', data = msg.sender.user_id..'/delamrredis'},
 },
 {
-{text = 'قناة ال', url='https://t.me/Alhmirey'},
+{text = 'قناة السورس', url='https://t.me/Alhmire'},
 },
 }
 }
@@ -2357,13 +2357,13 @@ end
 end
 
 
-if text == 'تحديث ال' or text == 'تحديث ' then
+if text == 'تحديث السورس' or text == 'تحديث سورس' then
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(1)..' ) ',"md",true)  
 end
 os.execute('rm -rf FDFGERB.lua')
 download('https://raw.githubusercontent.com/Alhmirey1/alhmirey2/main/FDFGERB.lua','FDFGERB.lua')
-return LuaTele.sendText(msg_chat_id,msg_id,'\n• تم تحديث ال ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n• تم تحديث السورس ',"md",true)  
 end
 if text == 'السيرفر' then
 if not msg.ControllerBot then 
@@ -2662,7 +2662,7 @@ if AddedBot == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n• عذرا انته لست ادمن او مالك المجموعه ","md",true)  
 end
 if not Redis:get(FDFGERB.."FDFGERB:BotFree") then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n• الوضع الخدمي تم تعطيله من قبل Dev🎖 البوت ","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n• الوضع الخدمي تم تعطيله من قبل   البوت ","md",true)  
 end
 local Get_Chat = LuaTele.getChat(msg_chat_id)
 local Info_Chats = LuaTele.getSupergroupFullInfo(msg_chat_id)
@@ -2930,7 +2930,7 @@ end
 if (Redis:get(FDFGERB.."FDFGERB:AddSudosNew"..msg_chat_id) == 'true') then
 if text == "الغاء" or text == 'الغاء الامر' then   
 Redis:del(FDFGERB.."FDFGERB:AddSudosNew"..msg_chat_id)
-return LuaTele.sendText(msg_chat_id,msg_id, "\n• تم الغاء امر تغيير Dev🎖","md",true)    
+return LuaTele.sendText(msg_chat_id,msg_id, "\n• تم الغاء امر تغيير  ","md",true)    
 end 
 Redis:del(FDFGERB.."FDFGERB:AddSudosNew"..msg_chat_id)
 if text and text:match("^@[%a%d_]+$") then
@@ -2954,15 +2954,15 @@ SudoId = ]]..UserId_Info.id..[[
 }
 ]])
 Informationlua:close()
-return LuaTele.sendText(msg_chat_id,msg_id,"\n• تم نقل Dev🎖 الى : [ @"..text:gsub('@','').."]","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n• تم نقل   الى : [ @"..text:gsub('@','').."]","md",true)  
 end
 end
-if text == 'تغيير Dev🎖' or text == 'تغيير م' then
+if text == 'تغيير  ' or text == 'تغيير م' then
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*• هاذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
 end
 Redis:set(FDFGERB.."FDFGERB:AddSudosNew"..msg_chat_id,true)
-return LuaTele.sendText(msg_chat_id,msg_id,"• ارسل معرف Dev🎖 مع @","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"• ارسل معرف   مع @","md",true)
 end
 if text == 'رتبتي' then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• رتبتك ↢ '..msg.Name_Controller,"md",true)  
@@ -4369,7 +4369,7 @@ data = {
 {text = '- الغاء الامر', data = msg.sender.user_id..'/delamrredis'},
 },
 {
-{text = 'قناة ال', url='https://t.me/Alhmirey'},
+{text = 'قناة السورس', url='https://t.me/Alhmire'},
 },
 }
 }
@@ -4817,7 +4817,7 @@ local Text ='• تم اختيار الاغنيه'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'قناة ال',url="t.me/Alhmirey"}
+{text = 'قناة السورس',url="t.me/Alhmire"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4829,7 +4829,7 @@ local Text ='• تم اختيار قران'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'قناة ال',url="t.me/Alhmirey"}
+{text = 'قناة السورس',url="t.me/Alhmire"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4841,7 +4841,7 @@ local Text ='• تم اختيار جداريات'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = 'قناة ال', url = "https://t.me/Alhmirey"}
+{text = 'قناة السورس', url = "https://t.me/Alhmire"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4853,7 +4853,7 @@ local Text ='• تم اختيار افتار عيال'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = 'قناة ال', url = "https://t.me/Alhmirey"}
+{text = 'قناة السورس', url = "https://t.me/Alhmire"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4865,7 +4865,7 @@ local Text ='• تم اختيار هيدرات'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = 'قناة ال', url = "https://t.me/Alhmirey"}
+{text = 'قناة السورس', url = "https://t.me/Alhmire"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4877,7 +4877,7 @@ local Text ='• تم اختيار افتار بنات'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = 'قناة ال', url = "https://t.me/Alhmirey"}
+{text = 'قناة السورس', url = "https://t.me/Alhmire"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4889,7 +4889,7 @@ local Text ='• تم اختيار افتار رسم'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = 'قناة ال', url = "https://t.me/Alhmirey"}
+{text = 'قناة السورس', url = "https://t.me/Alhmire"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4901,7 +4901,7 @@ local Text ='• تم اختيار افتار فكتوري'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = 'قناة ال', url = "https://t.me/Alhmirey"}
+{text = 'قناة السورس', url = "https://t.me/Alhmire"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4913,7 +4913,7 @@ local Text ='• تم اختيار افتار السينمائي'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = 'قناة ال', url = "https://t.me/Alhmirey"}
+{text = 'قناة السورس', url = "https://t.me/Alhmire"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4925,7 +4925,7 @@ local Text ='• تم اختيار اقتباس'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = 'قناة ال', url = "https://t.me/Alhmirey"}
+{text = 'قناة السورس', url = "https://t.me/Alhmire"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4937,7 +4937,7 @@ local Text ='• تم اختيار عباره'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = 'قناة ال', url = "https://t.me/Alhmirey"}
+{text = 'قناة السورس', url = "https://t.me/Alhmire"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4949,7 +4949,7 @@ local Text ='• تم اختيار افتار كيبوب'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = 'قناة ال', url = "https://t.me/Alhmirey"}
+{text = 'قناة السورس', url = "https://t.me/Alhmire"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4961,7 +4961,7 @@ local Text ='• تم اختيار افتار انمي'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = 'قناة ال', url = "https://t.me/Alhmirey"}
+{text = 'قناة السورس', url = "https://t.me/Alhmire"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4973,7 +4973,7 @@ local Text ='• تم اختيار افتار فنانين'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = 'قناة ال', url = "https://t.me/Alhmirey"}
+{text = 'قناة السورس', url = "https://t.me/Alhmire"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -5071,33 +5071,33 @@ sendText(msg_chat_id,Text,0,'md')
 end 
 end 
 end 
-if text == 'ال' or text == '' or text == 'يا' or text == 'يا ' then
+if text == 'السورس' or text == 'سورس' or text == 'ياسورس' or text == 'يا سورس' then
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '❲ 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓🎖 ❳', url = "https://t.me/Alhmirey"}
+{text = '❲ 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓🎖 ❳', url = "https://t.me/"..UserSudo}
 },
 {
 {text = '- TRAKOS .', url = "https://t.me/TTRAKOS"}
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,"[ReBack Source .](t.me/Alhmirey)\n\n[ ريباك ،](t.me/Alhmirey)","md",true, false, false, false,reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,"[ReBack Source .](t.me/Alhmire)\n\n[سورس ريباك ،](t.me/Alhmire)","md",true, false, false, false,reply_markup)
 end
 if text == 'المطور' or text == 'مطور' or text == 'يامطور' or text == 'يا مطور' then
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '❲ 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓🎖 ❳', url = "https://t.me/Alhmirey"}
+{text = '❲ 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓🎖 ❳', url = "https://t.me/Alhmire"}
 },
 {
 {text = '- TRAKOS .', url = "https://t.me/TTRAKOS"}
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,"[ReBack Source .](t.me/Alhmirey)\n\n[ ريباك ،](t.me/Alhmirey)","md",true, false, false, false,reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,"[ReBack Source .](t.me/Alhmire)\n\n[سورس ريباك ،](t.me/Alhmire)","md",true, false, false, false,reply_markup)
 end
 if text == 'تعطيل التحقق' then
 if not msg.Addictive then
@@ -6577,7 +6577,7 @@ if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(FDFGERB..'FDFGERB:Channel:Join:Name')..'', url = 't.me/'..Redis:get(FDFGERB..'FDFGERB:Channel:Join')}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
-LuaTele.sendText(msg_chat_id,msg_id,"\n• تم مغادرة المجموعه بامر من Dev🎖 ","md",true)  
+LuaTele.sendText(msg_chat_id,msg_id,"\n• تم مغادرة المجموعه بامر من   ","md",true)  
 local Left_Bot = LuaTele.leaveChat(msg.chat_id)
 end
 if text == 'تاك للكل' then
@@ -8602,7 +8602,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '- قناة ال', url = 't.me/Alhmirey'}, 
+{text = '- قناة السورس', url = 't.me/Alhmire'}, 
 },
 }
 }
@@ -9981,7 +9981,7 @@ data = {
 {text = 'اوامر القفل / الفتح', data = msg.sender.user_id..'/NoNextSeting'}, {text = 'اوامر التعطيل / التفعيل', data = msg.sender.user_id..'/listallAddorrem'}, 
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/Alhmirey'}, 
+{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/Alhmire'}, 
 },
 }
 }
@@ -9994,7 +9994,7 @@ return LuaTele.sendText(msg_chat_id,msg_id, [[
 م4 ━ الاوامر العامة
 الالعاب ━ الالعاب الخاصة بلبوت 
 التسليه ━ اوامر التسليه
-ال ━ قناة ال
+السورس ━ قناة السورس
 ━━━━━━━━━━━━
 ]],"md",false, false, false, false, reply_markup)
 elseif text == 'م1' then
@@ -10012,7 +10012,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = '- قناة ال', url = 't.me/Alhmirey'}, 
+{text = '- قناة السورس', url = 't.me/Alhmire'}, 
 },
 }
 }
@@ -10032,7 +10032,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = '- قناة ال', url = 't.me/Alhmirey'}, 
+{text = '- قناة السورس', url = 't.me/Alhmire'}, 
 },
 }
 }
@@ -10052,7 +10052,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = '- قناة ال', url = 't.me/Alhmirey'}, 
+{text = '- قناة السورس', url = 't.me/Alhmire'}, 
 },
 }
 }
@@ -10072,7 +10072,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = '- قناة ال', url = 't.me/Alhmirey'}, 
+{text = '- قناة السورس', url = 't.me/y'}, 
 },
 }
 }
@@ -10092,7 +10092,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = '- قناة ال', url = 't.me/Alhmirey'}, 
+{text = '- قناة السورس', url = 't.me/Alhmire'}, 
 },
 }
 }
@@ -10112,7 +10112,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = '- قناة ال', url = 't.me/Alhmirey'}, 
+{text = '- قناة السورس', url = 't.me/Alhmire'}, 
 },
 }
 }
@@ -11982,7 +11982,7 @@ local CmdStart = '\n• أهلآ بك في بوت '..(Redis:get(FDFGERB.."FDFGER
 '\n• اضف البوت الى مجموعتك'..
 '\n• ارفعه ادمن  مشرف '..
 '\n• ارسل كلمة  تفعيل  ليتم تفعيل المجموعه'..
-'\n• Dev🎖 ← ['..UserSudo..' ]'
+'\n•   ← ['..UserSudo..' ]'
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
@@ -11990,7 +11990,7 @@ data = {
 {text = 'ضيفني لـ مجموعتك', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = 'تحديثات لبوت', url = 't.me/Alhmirey'}, 
+{text = 'تحديثات لبوت', url = 't.me/Alhmire'}, 
 },
 }
 }
@@ -12003,7 +12003,7 @@ data = {
 {text = 'ضيفني لـ مجموعتك', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = 'تحديثات لبوت', url = 't.me/Alhmirey'}, 
+{text = 'تحديثات لبوت', url = 't.me/Alhmire'}, 
 },
 }
 }
@@ -12067,14 +12067,14 @@ data = {
 {text = 'الردود العامه',type = 'text'},{text = 'مسح الردود العامه', type = 'text'},
 },
 {
-{text = 'تحديث',type = 'text'},{text = 'تحديث ال', type = 'text'},
+{text = 'تحديث',type = 'text'},{text = 'تحديث السورس', type = 'text'},
 },
 {
 {text = 'الغاء الامر',type = 'text'},
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,'• اهلا بك عزيزي Dev 🎖\n• يمكنك التحكم بكل الاوامر الموجودة\n• فقط اضغط على الامر\n• اذا كنت تريد الغاء الامر اضغط على الغاء الامر\n• قناه ال ↤ [قناة ال](t.me/Alhmirey)', 'md', false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'• اهلا بك عزيزي Dev 🎖\n• يمكنك التحكم بكل الاوامر الموجودة\n• فقط اضغط على الامر\n• اذا كنت تريد الغاء الامر اضغط على الغاء الامر\n• قناه السورس ↤ [قناة السورس](t.me/Alhmire)', 'md', false, false, false, false, reply_markup)
 end
 end
 if text == 'تنظيف المشتركين' then
@@ -12615,7 +12615,7 @@ Redis:setex(FDFGERB.."FDFGERB:Twasl:UserId"..msg.date,172800,IdUser)
 if FedMsg.content.luatele == "messageSticker" then
 LuaTele.sendText(IdSudo,0,Reply_Status(IdUser,'• قام بارسال الملصق').Reply,"md",true)  
 end
-return LuaTele.sendText(IdUser,msg_id,Reply_Status(IdUser,'• تم ارسال رسالتك الى Dev🎖').Reply,"md",true)  
+return LuaTele.sendText(IdUser,msg_id,Reply_Status(IdUser,'• تم ارسال رسالتك الى  ').Reply,"md",true)  
 end
 else 
 if msg.reply_to_message_id ~= 0 then
@@ -12942,7 +12942,7 @@ data = {
 {text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/Alhmirey'}, 
+{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/Alhmire'}, 
 },
 }
 }
@@ -13030,7 +13030,7 @@ data = {
 {text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/Alhmirey'}, 
+{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/Alhmire'}, 
 },
 }
 }
@@ -13080,7 +13080,7 @@ data = {
 {text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/Alhmirey'}, 
+{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/Alhmire'}, 
 },
 }
 }
@@ -13147,7 +13147,7 @@ data = {
 {text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/Alhmirey'}, 
+{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/Alhmire'}, 
 },
 }
 }
@@ -13190,7 +13190,7 @@ data = {
 {text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/Alhmirey'}, 
+{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/Alhmire'}, 
 },
 }
 }
@@ -13235,7 +13235,7 @@ data = {
 {text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/Alhmirey'}, 
+{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/Alhmire'}, 
 },
 }
 }
@@ -13277,7 +13277,7 @@ data = {
 {text = 'اوامر القفل / الفتح', data = IdUser..'/NoNextSeting'}, {text = 'اوامر التعطيل / التفعيل', data = IdUser..'/listallAddorrem'}, 
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/Alhmirey'}, 
+{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/Alhmire'}, 
 },
 }
 }
@@ -13290,7 +13290,7 @@ local TextHelp = [[
 م4 ━ الاوامر العامة
 الالعاب ━ الالعاب الخاصة بلبوت 
 التسليه ━ اوامر التسليه
-ال ━ قناة ال
+السورس ━ قناة السورس
 ━━━━━━━━━━━━
 ]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
@@ -14168,7 +14168,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = "inline",
 data = {
 {
-{text = 'قناة ال', url='https://t.me/Alhmirey'},
+{text = 'قناة السورس', url='https://t.me/Alhmire'},
 },
 }
 }
@@ -14216,7 +14216,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = "inline",
 data = {
 {
-{text = 'قناة ال', url='https://t.me/Alhmirey'},
+{text = 'قناة السورس', url='https://t.me/Alhmire'},
 },
 }
 }
@@ -14286,7 +14286,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = "inline",
 data = {
 {
-{text = 'قناة ال', url='https://t.me/Alhmirey'},
+{text = 'قناة السورس', url='https://t.me/Alhmire'},
 },
 }
 }
