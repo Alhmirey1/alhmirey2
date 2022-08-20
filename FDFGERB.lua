@@ -8812,7 +8812,7 @@ data = {
 },
 }
 }
-print(UserId)
+print(id)
 local txx = "["..title.."]("..id..")"
 LuaTele.editMessageText(ChatId,Msg_id,txx, 'md', true, false, reply_markup)
 else
