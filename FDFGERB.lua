@@ -5099,6 +5099,24 @@ data = {
 }
 return LuaTele.sendText(msg_chat_id,msg_id,"[Dev🎖 .](t.me/"..UserSudo..")\n\n[سورس ساسكي ،](t.me/al_hmirey)","md",true, false, false, false,reply_markup)
 end
+
+if text then
+if text:match("^بحث (.*)$") then
+local search = text:match("^بحث (.*)$")
+local json = json:decode(http.request("https://moh-yen.org/api/youtube.php?search="..URL.escape(search)..""))
+local datar = {data = {{text = "❍ 𝑆𝑂𝑈𝑅𝐶𝐸 𝐵𝐿𝐴𝐶𝐾 ❍" , url = 'https://t.me/J_F_A_I'}}}
+for i = 1,5 do
+title = json.results[i].title
+link = json.results[i].url
+datar[i] = {{text = title , data =msg.sender.user_id.."/dl"..link}}
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = datar
+}
+LuaTele.sendText(msg.chat_id,msg.id,'※ نتائج بحثك ل *'..search..'*',"md",false, false, false, false, reply_markup)
+end
+end
 if text == 'تعطيل التحقق' then
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص : ( '..Controller_Num(7)..' ) ',"md",true)  
