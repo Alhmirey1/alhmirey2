@@ -8797,10 +8797,9 @@ data = {
 }
 return LuaTele.sendText(msg_chat_id, msg_id, "• الصلاحيات • ", 'md', false, false, false, false, reply_markup)
 end
+
 if Text and Text:match('(%d+)/dl(.*)') then
-
 local xd = {Text:match('(%d+)/dl(.*)')}
-
 local UserId = xd[1]
 local id = xd[2]
 if tonumber(IdUser) == tonumber(UserId) then
@@ -8813,6 +8812,7 @@ data = {
 },
 }
 }
+print(UserId)
 local txx = "["..title.."]("..id..")"
 LuaTele.editMessageText(ChatId,Msg_id,txx, 'md', true, false, reply_markup)
 else
