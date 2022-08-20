@@ -9360,26 +9360,6 @@ Redis:del(FDFGERB.."FDFGERB:kkytmAll:Groups")
 return LuaTele.sendText(msg_chat_id,msg_id,"• تم مسح { "..#Info_Members.." } من المكتومين عام بنجاح .","md",true)
 end
 
-if text == "غنيلي" then
-local t = "اليك اغنيه عشوائيه من البوت"
-Num = math.random(8,83)
-Mhm = math.random(108,143)
-Mhhm = math.random(166,179)
-Mmhm = math.random(198,216)
-Mhmm = math.random(257,626)
-local Texting = {Num,Mhm,Mhhm,Mmhm,Mhmm}
-local Rrr = Texting[math.random(#Texting)]
-local m = "https://t.me/mmsst13/"..Rrr..""
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = 'اغنيه اخري', callback_data=msg.sender.user_id.."/songg"},
-},
-}
-local rep = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendaudio?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&audio="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown&reply_markup="..JSON.encode(keyboard))
-end
-
 if TextMsg == 'المحظورين عام' or TextMsg == 'قائمه العام' then
 if not msg.DevelopersQ then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(2)..' ) ',"md",true)  
@@ -11948,7 +11928,7 @@ return LuaTele.sendText(msg_chat_id,msg_id, "• عدد الجواهر التي 
 end
 end
 
-if text == '' then
+if text == 'ترتيب الاوامر' then
 if not msg.Managers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(6)..' ) ',"md",true)  
 end
