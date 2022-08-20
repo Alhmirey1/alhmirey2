@@ -2362,7 +2362,7 @@ if not msg.ControllerBot then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(1)..' ) ',"md",true)  
 end
 os.execute('rm -rf FDFGERB.lua')
-download('https://raw.githubusercontent.com/al_hmirey1/al_hmirey2/main/FDFGERB.lua','FDFGERB.lua')
+download('https://raw.githubusercontent.com/Alhmirey1/alhmirey2/main/FDFGERB.lua','FDFGERB.lua')
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• تم تحديث السورس ',"md",true)  
 end
 if text == 'السيرفر' then
