@@ -5097,7 +5097,7 @@ data = {
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,"[ReBack Source .](t.me/al_hmirey)\n\n[سورس ساسكي ،](t.me/al_hmirey)","md",true, false, false, false,reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,"[Dev🎖 .](t.me/"..UserSudo..")\n\n[سورس ساسكي ،](t.me/al_hmirey)","md",true, false, false, false,reply_markup)
 end
 if text == 'تعطيل التحقق' then
 if not msg.Addictive then
