@@ -2892,7 +2892,6 @@ return LuaTele.sendText(msg_chat_id,msg_id,
 '\n• رتبته ↢ '..RinkBot..
 '\n• رسائله ↢ '..TotalMsg..
 '\n• تعديلاته ↢ '..TotalEdit..
-'\n• رتبته المجموعه ↢ '..StatusMemberChat..
 '',"md",true) 
 end
 if text and text:match('^ايدي @(%S+)$') or text and text:match('^كشف @(%S+)$') then
