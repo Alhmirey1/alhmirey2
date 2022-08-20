@@ -1,9 +1,9 @@
 --[[
 قناة السورس
 ----
-dev: @Alhmirey
-dev2: @Alhmirey
-ch: @Alhmirey
+dev: @al_hmirey
+dev2: @al_hmirey
+ch: @al_hmirey
 --]]
 URL     = require("./libs/url")
 JSON    = require("./libs/dkjson")
@@ -1745,7 +1745,7 @@ data = {
 {text = '- الغاء الامر', data = msg.sender.user_id..'/delamrredis'},
 },
 {
-{text = 'قناة السورس', url='https://t.me/Alhmirey'},
+{text = 'قناة السورس', url='https://t.me/al_hmirey'},
 },
 }
 }
@@ -1769,7 +1769,7 @@ data = {
 {text = '- الغاء الامر', data = msg.sender.user_id..'/delamrredis'},
 },
 {
-{text = 'قناة السورس', url='https://t.me/Alhmirey'},
+{text = 'قناة السورس', url='https://t.me/al_hmirey'},
 },
 }
 }
@@ -1906,7 +1906,7 @@ data = {
 {text = '', data = msg.sender.user_id..'/delamrredis'},
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url='https://t.me/Alhmirey'},
+{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url='https://t.me/al_hmirey'},
 },
 }
 }
@@ -2100,7 +2100,7 @@ data = {
 {text = '- الغاء الامر', data = msg.sender.user_id..'/delamrredis'},
 },
 {
-{text = 'قناة السورس', url='https://t.me/Alhmirey'},
+{text = 'قناة السورس', url='https://t.me/al_hmirey'},
 },
 }
 }
@@ -2362,7 +2362,7 @@ if not msg.ControllerBot then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(1)..' ) ',"md",true)  
 end
 os.execute('rm -rf FDFGERB.lua')
-download('https://raw.githubusercontent.com/Alhmireyy1/Alhmireyy2/main/FDFGERB.lua','FDFGERB.lua')
+download('https://raw.githubusercontent.com/al_hmireyy1/al_hmireyy2/main/FDFGERB.lua','FDFGERB.lua')
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• تم تحديث السورس ',"md",true)  
 end
 if text == 'السيرفر' then
@@ -4369,7 +4369,7 @@ data = {
 {text = '- الغاء الامر', data = msg.sender.user_id..'/delamrredis'},
 },
 {
-{text = 'قناة السورس', url='https://t.me/Alhmirey'},
+{text = 'قناة السورس', url='https://t.me/al_hmirey'},
 },
 }
 }
@@ -4817,7 +4817,7 @@ local Text ='• تم اختيار الاغنيه'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'قناة السورس',url="t.me/Alhmirey"}
+{text = 'قناة السورس',url="t.me/al_hmirey"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4829,7 +4829,7 @@ local Text ='• تم اختيار قران'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'قناة السورس',url="t.me/Alhmirey"}
+{text = 'قناة السورس',url="t.me/al_hmirey"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4841,7 +4841,7 @@ local Text ='• تم اختيار جداريات'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = 'قناة السورس', url = "https://t.me/Alhmirey"}
+{text = 'قناة السورس', url = "https://t.me/al_hmirey"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4853,7 +4853,7 @@ local Text ='• تم اختيار افتار عيال'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = 'قناة السورس', url = "https://t.me/Alhmirey"}
+{text = 'قناة السورس', url = "https://t.me/al_hmirey"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4865,7 +4865,7 @@ local Text ='• تم اختيار هيدرات'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = 'قناة السورس', url = "https://t.me/Alhmirey"}
+{text = 'قناة السورس', url = "https://t.me/al_hmirey"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4877,7 +4877,7 @@ local Text ='• تم اختيار افتار بنات'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = 'قناة السورس', url = "https://t.me/Alhmirey"}
+{text = 'قناة السورس', url = "https://t.me/al_hmirey"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4889,7 +4889,7 @@ local Text ='• تم اختيار افتار رسم'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = 'قناة السورس', url = "https://t.me/Alhmirey"}
+{text = 'قناة السورس', url = "https://t.me/al_hmirey"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4901,7 +4901,7 @@ local Text ='• تم اختيار افتار فكتوري'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = 'قناة السورس', url = "https://t.me/Alhmirey"}
+{text = 'قناة السورس', url = "https://t.me/al_hmirey"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4913,7 +4913,7 @@ local Text ='• تم اختيار افتار السينمائي'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = 'قناة السورس', url = "https://t.me/Alhmirey"}
+{text = 'قناة السورس', url = "https://t.me/al_hmirey"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4925,7 +4925,7 @@ local Text ='• تم اختيار اقتباس'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = 'قناة السورس', url = "https://t.me/Alhmirey"}
+{text = 'قناة السورس', url = "https://t.me/al_hmirey"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4937,7 +4937,7 @@ local Text ='• تم اختيار عباره'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = 'قناة السورس', url = "https://t.me/Alhmirey"}
+{text = 'قناة السورس', url = "https://t.me/al_hmirey"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4949,7 +4949,7 @@ local Text ='• تم اختيار افتار كيبوب'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = 'قناة السورس', url = "https://t.me/Alhmirey"}
+{text = 'قناة السورس', url = "https://t.me/al_hmirey"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4961,7 +4961,7 @@ local Text ='• تم اختيار افتار انمي'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = 'قناة السورس', url = "https://t.me/Alhmirey"}
+{text = 'قناة السورس', url = "https://t.me/al_hmirey"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -4973,7 +4973,7 @@ local Text ='• تم اختيار افتار فنانين'
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = 'قناة السورس', url = "https://t.me/Alhmirey"}
+{text = 'قناة السورس', url = "https://t.me/al_hmirey"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -5079,11 +5079,11 @@ data = {
 {text = '❲ 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓🎖 ❳', url = "https://t.me/"..UserSudo}
 },
 {
-{text = '- TRAKOS .', url = "https://t.me/Alhmirey"}
+{text = '- TRAKOS .', url = "https://t.me/al_hmirey"}
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,"[ReBack Source .](t.me/Alhmirey)\n\n[سورس ساسكي ،](t.me/Alhmirey)","md",true, false, false, false,reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,"[ReBack Source .](t.me/al_hmirey)\n\n[سورس ساسكي ،](t.me/al_hmirey)","md",true, false, false, false,reply_markup)
 end
 if text == 'المطور' or text == 'مطور' or text == 'يامطور' or text == 'يا مطور' then
 local reply_markup = LuaTele.replyMarkup{
@@ -5093,11 +5093,11 @@ data = {
 {text = '❲ 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓🎖 ❳', url = "https://t.me/"..UserSudo}
 },
 {
-{text = '- Alhmire .', url = "https://t.me/Alhmirey"}
+{text = '- Alhmire .', url = "https://t.me/al_hmirey"}
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,"[ReBack Source .](t.me/Alhmirey)\n\n[سورس ساسكي ،](t.me/Alhmirey)","md",true, false, false, false,reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,"[ReBack Source .](t.me/al_hmirey)\n\n[سورس ساسكي ،](t.me/al_hmirey)","md",true, false, false, false,reply_markup)
 end
 if text == 'تعطيل التحقق' then
 if not msg.Addictive then
@@ -8602,7 +8602,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '- قناة السورس', url = 't.me/Alhmirey'}, 
+{text = '- قناة السورس', url = 't.me/al_hmirey'}, 
 },
 }
 }
@@ -9981,7 +9981,7 @@ data = {
 {text = 'اوامر القفل / الفتح', data = msg.sender.user_id..'/NoNextSeting'}, {text = 'اوامر التعطيل / التفعيل', data = msg.sender.user_id..'/listallAddorrem'}, 
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/Alhmirey'}, 
+{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/al_hmirey'}, 
 },
 }
 }
@@ -10012,7 +10012,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = '- قناة السورس', url = 't.me/Alhmirey'}, 
+{text = '- قناة السورس', url = 't.me/al_hmirey'}, 
 },
 }
 }
@@ -10032,7 +10032,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = '- قناة السورس', url = 't.me/Alhmirey'}, 
+{text = '- قناة السورس', url = 't.me/al_hmirey'}, 
 },
 }
 }
@@ -10052,7 +10052,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = '- قناة السورس', url = 't.me/Alhmirey'}, 
+{text = '- قناة السورس', url = 't.me/al_hmirey'}, 
 },
 }
 }
@@ -10092,7 +10092,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = '- قناة السورس', url = 't.me/Alhmirey'}, 
+{text = '- قناة السورس', url = 't.me/al_hmirey'}, 
 },
 }
 }
@@ -10112,7 +10112,7 @@ data = {
 {text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = '- قناة السورس', url = 't.me/Alhmirey'}, 
+{text = '- قناة السورس', url = 't.me/al_hmirey'}, 
 },
 }
 }
@@ -11990,7 +11990,7 @@ data = {
 {text = 'ضيفني لـ مجموعتك', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = 'تحديثات لبوت', url = 't.me/Alhmirey'}, 
+{text = 'تحديثات لبوت', url = 't.me/al_hmirey'}, 
 },
 }
 }
@@ -12003,7 +12003,7 @@ data = {
 {text = 'ضيفني لـ مجموعتك', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = 'تحديثات لبوت', url = 't.me/Alhmirey'}, 
+{text = 'تحديثات لبوت', url = 't.me/al_hmirey'}, 
 },
 }
 }
@@ -12074,7 +12074,7 @@ data = {
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,'• اهلا بك عزيزي Dev 🎖\n• يمكنك التحكم بكل الاوامر الموجودة\n• فقط اضغط على الامر\n• اذا كنت تريد الغاء الامر اضغط على الغاء الامر\n• قناه السورس ↤ [قناة السورس](t.me/Alhmirey)', 'md', false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'• اهلا بك عزيزي Dev 🎖\n• يمكنك التحكم بكل الاوامر الموجودة\n• فقط اضغط على الامر\n• اذا كنت تريد الغاء الامر اضغط على الغاء الامر\n• قناه السورس ↤ [قناة السورس](t.me/al_hmirey)', 'md', false, false, false, false, reply_markup)
 end
 end
 if text == 'تنظيف المشتركين' then
@@ -12942,7 +12942,7 @@ data = {
 {text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/Alhmirey'}, 
+{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/al_hmirey'}, 
 },
 }
 }
@@ -13030,7 +13030,7 @@ data = {
 {text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/Alhmirey'}, 
+{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/al_hmirey'}, 
 },
 }
 }
@@ -13080,7 +13080,7 @@ data = {
 {text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/Alhmirey'}, 
+{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/al_hmirey'}, 
 },
 }
 }
@@ -13147,7 +13147,7 @@ data = {
 {text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/Alhmirey'}, 
+{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/al_hmirey'}, 
 },
 }
 }
@@ -13190,7 +13190,7 @@ data = {
 {text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/Alhmirey'}, 
+{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/al_hmirey'}, 
 },
 }
 }
@@ -13235,7 +13235,7 @@ data = {
 {text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/Alhmirey'}, 
+{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/al_hmirey'}, 
 },
 }
 }
@@ -13277,7 +13277,7 @@ data = {
 {text = 'اوامر القفل / الفتح', data = IdUser..'/NoNextSeting'}, {text = 'اوامر التعطيل / التفعيل', data = IdUser..'/listallAddorrem'}, 
 },
 {
-{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/Alhmirey'}, 
+{text = '𝑺𝒐𝒖𝒓𝒄𝒆', url = 't.me/al_hmirey'}, 
 },
 }
 }
@@ -14045,7 +14045,7 @@ LuaTele.answerCallbackQuery(data.id, "※ انتظر يتم التحميل ", tr
 
 LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
 os.execute("yt-dlp "..id.." -f 251 -o '"..title..".mp3'")
-LuaTele.sendAudio(ChatId,0,'./'..title..'.mp3',"※ ["..title.."]("..id..")\n※ حسب طلب ["..u.first_name.."](tg://user?id="..IdUser..")","md",nil,title,"Alhmireyy") 
+LuaTele.sendAudio(ChatId,0,'./'..title..'.mp3',"※ ["..title.."]("..id..")\n※ حسب طلب ["..u.first_name.."](tg://user?id="..IdUser..")","md",nil,title,"al_hmireyy") 
 sleep(2)
 os.remove(""..title..".mp3")
 else
@@ -14168,7 +14168,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = "inline",
 data = {
 {
-{text = 'قناة السورس', url='https://t.me/Alhmirey'},
+{text = 'قناة السورس', url='https://t.me/al_hmirey'},
 },
 }
 }
@@ -14216,7 +14216,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = "inline",
 data = {
 {
-{text = 'قناة السورس', url='https://t.me/Alhmirey'},
+{text = 'قناة السورس', url='https://t.me/al_hmirey'},
 },
 }
 }
@@ -14286,7 +14286,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = "inline",
 data = {
 {
-{text = 'قناة السورس', url='https://t.me/Alhmirey'},
+{text = 'قناة السورس', url='https://t.me/al_hmirey'},
 },
 }
 }
