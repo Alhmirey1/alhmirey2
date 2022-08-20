@@ -5093,7 +5093,7 @@ data = {
 {text = '❲ 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓🎖 ❳', url = "https://t.me/"..UserSudo}
 },
 {
-{text = '- Alhmire .', url = "https://t.me/al_hmirey"}
+{text = '- Alhmirey .', url = "https://t.me/al_hmirey"}
 },
 }
 }
