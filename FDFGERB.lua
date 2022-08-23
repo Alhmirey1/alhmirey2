@@ -14164,21 +14164,7 @@ end
 end
 end
 
-if Text and Text:match('(%d+)/songg') then
-local UserId = Text:match('(%d+)/songg')
-if tonumber(IdUser) == tonumber(UserId) then
-  Abs = math.random(2,140); 
-local Text ='• تم اختيار الاغنيه'
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = 'اغنيه اخري', callback_data=msg.sender.user_id.."/songg"},
-},
-}
-local msg_id = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/VONNNDD/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-end
-end
+
 
 if Text and Text:match('(%d+)/groupNum4//(%d+)') then
 local UserId = {Text:match('(%d+)/groupNum4//(%d+)')}
