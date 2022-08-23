@@ -8235,21 +8235,6 @@ Redis:del(FDFGERB.."FDFGERB:Group:Rules"..msg_chat_id)
 return LuaTele.sendText(msg_chat_id,msg_id,"• تم ازالة قوانين المجموعه","md",true)    
 end
 
-if Text and Text:match('(%d+)/songg') then
-local UserId = Text:match('(%d+)/songg')
-if tonumber(IdUser) == tonumber(UserId) then
-  Abs = math.random(2,140); 
-local Text ='• تم اختيار الاغنيه'
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = 'اغنيه اخري', callback_data=msg.sender.user_id.."/songg"},
-},
-}
-local msg_id = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/VONNNDD/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-end
-end
 
 if text == "الساعه" then
 local time = "\n الساعه الان : "..os.date("%I:%M%p")
@@ -14176,6 +14161,22 @@ LuaTele.answerCallbackQuery(data.id, "• تم تفعيل صلاحيه الحظ�
 GetAdminsSlahe(ChatId,UserId[1],UserId[2],Msg_id,nil,nil,'❬ ✔️ ❭',nil,nil,nil)
 LuaTele.setChatMemberStatus(ChatId,UserId[2],'administrator',{0 ,GetAdminsNum(ChatId,UserId[2]).change_info, 0, 0, GetAdminsNum(ChatId,UserId[2]).delete_messages, GetAdminsNum(ChatId,UserId[2]).invite_users, 1 ,GetAdminsNum(ChatId,UserId[2]).pin_messages, GetAdminsNum(ChatId,UserId[2]).promote})
 end
+end
+end
+
+if Text and Text:match('(%d+)/songg') then
+local UserId = Text:match('(%d+)/songg')
+if tonumber(IdUser) == tonumber(UserId) then
+  Abs = math.random(2,140); 
+local Text ='• تم اختيار الاغنيه'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'اغنيه اخري', callback_data=msg.sender.user_id.."/songg"},
+},
+}
+local msg_id = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/VONNNDD/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 end
 
