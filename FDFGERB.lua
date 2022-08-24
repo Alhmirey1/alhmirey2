@@ -2196,7 +2196,7 @@ if NewCmmd then
 text = (NewCmmd or text)
 end
 end
-if text == 'رفع النسخه الاحتياطيه' and msg.reply_to_message_id ~= 0 or text == 'رفع نسخه احتياطيه' and msg.reply_to_message_id ~= 0 then
+if text == ' النسخه الاحتياطيه' and msg.reply_to_message_id ~= 0 or text == ' نسخه احتياطيه' and msg.reply_to_message_id ~= 0 then
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(1)..' ) ',"md",true)  
 end
@@ -2257,7 +2257,7 @@ end
 return LuaTele.sendText(msg_chat_id,msg_id,'• تم استرجاع {'..X..'} مجموعه \n• واسترجاع {'..Y..'} مشترك في البوت')
 end
 end
-if text == 'رفع نسخه قديمه' and msg.reply_to_message_id ~= 0 then
+if text == ' نسخه قديمه' and msg.reply_to_message_id ~= 0 then
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(1)..' ) ',"md",true)  
 end
@@ -2314,7 +2314,7 @@ local ChannelUser = text:gsub('@','')
 if UserId_Info.type.is_channel == true then
 local StatusMember = LuaTele.getChatMember(UserId_Info.id,FDFGERB).status.luatele
 if (StatusMember ~= "chatMemberStatusAdministrator") then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n• البوت عضو في القناة يرجى رفع البوت ادمن واعادة وضع الاشتراك ","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n• البوت عضو في القناة يرجى  البوت ادمن واعادة وضع الاشتراك ","md",true)  
 end
 Redis:set(FDFGERB..'FDFGERB:Channel:Join',ChannelUser) 
 Redis:set(FDFGERB..'FDFGERB:Channel:Join:Name',UserId_Info.title) 
@@ -2538,7 +2538,7 @@ File:write(Get_Json)
 File:close()
 return LuaTele.sendDocument(msg_chat_id,msg_id,'./ReplyGroups.json', '', 'md')
 end
-if text == 'رفع نسخه الردود' and msg.reply_to_message_id ~= 0 then
+if text == ' نسخه الردود' and msg.reply_to_message_id ~= 0 then
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(1)..' ) ',"md",true)  
 end
@@ -2615,7 +2615,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '- رفع المالك والادمنيه', data = msg.sender.user_id..'/addAdmins@'..msg_chat_id},
+{text = '-  المالك والادمنيه', data = msg.sender.user_id..'/addAdmins@'..msg_chat_id},
 },
 {
 {text = '- قفل جميع الاوامر ', data =msg.sender.user_id..'/LockAllGroup@'..msg_chat_id},
@@ -2696,7 +2696,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '- رفع المالك والادمنيه', data = msg.sender.user_id..'/addAdmins@'..msg_chat_id},
+{text = '-  المالك والادمنيه', data = msg.sender.user_id..'/addAdmins@'..msg_chat_id},
 },
 {
 {text = '- قفل جميع الاوامر ', data =msg.sender.user_id..'/LockAllGroup@'..msg_chat_id},
@@ -3466,8 +3466,8 @@ return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"• تم تن
 end
 end
 end
-if text and text:match('^رفع (.*) @(%S+)$') then
-local UserName = {text:match('^رفع (.*) @(%S+)$')}
+if text and text:match('^ (.*) @(%S+)$') then
+local UserName = {text:match('^ (.*) @(%S+)$')}
 local UserId_Info = LuaTele.searchPublicChat(UserName[2])
 if UserId_Info.type.is_channel == true then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n• عذرآ لا تستطيع استخدام معرف قناة او مجموعه ","md",true)  
@@ -3573,7 +3573,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 if not msg.Originators and not Redis:get(FDFGERB.."FDFGERB:Status:SetId"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"• تم تعطيل (الرفع) من قبل المنشئين","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"• تم تعطيل (ال) من قبل المنشئين","md",true)
 end 
 if Redis:sismember(FDFGERB.."FDFGERB:Addictive:Group"..msg_chat_id,UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم ترقيته ادمن  مسبقا ").Reply,"md",true)  
@@ -3591,7 +3591,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 if not msg.Originators and not Redis:get(FDFGERB.."FDFGERB:Status:SetId"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"• تم تعطيل (الرفع) من قبل المنشئين","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"• تم تعطيل (ال) من قبل المنشئين","md",true)
 end 
 if Redis:sismember(FDFGERB.."FDFGERB:Distinguished:Group"..msg_chat_id,UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"• تم ترقيته مميز  مسبقا ").Reply,"md",true)  
@@ -3614,8 +3614,8 @@ return LuaTele.sendText(msg_chat_id,msg_id,"• تم اضافة القناه ب�
 end
 end
 end
-if text and text:match("^رفع (.*)$") and msg.reply_to_message_id ~= 0 then
-local TextMsg = text:match("^رفع (.*)$")
+if text and text:match("^ (.*)$") and msg.reply_to_message_id ~= 0 then
+local TextMsg = text:match("^ (.*)$")
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
 if UserInfo.message == "Invalid user ID" then
@@ -3719,7 +3719,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 if not msg.Originators and not Redis:get(FDFGERB.."FDFGERB:Status:SetId"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"• تم تعطيل (الرفع) من قبل المنشئين","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"• تم تعطيل (ال) من قبل المنشئين","md",true)
 end 
 if Redis:sismember(FDFGERB.."FDFGERB:Addictive:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم ترقيته ادمن  مسبقا ").Reply,"md",true)  
@@ -3737,7 +3737,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 if not msg.Originators and not Redis:get(FDFGERB.."FDFGERB:Status:SetId"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"• تم تعطيل (الرفع) من قبل المنشئين","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"• تم تعطيل (ال) من قبل المنشئين","md",true)
 end 
 if Redis:sismember(FDFGERB.."FDFGERB:Distinguished:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"• تم ترقيته مميز  مسبقا ").Reply,"md",true)  
@@ -3747,8 +3747,8 @@ return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.use
 end
 end
 end
-if text and text:match('^رفع (.*) (%d+)$') then
-local UserId = {text:match('^رفع (.*) (%d+)$')}
+if text and text:match('^ (.*) (%d+)$') then
+local UserId = {text:match('^ (.*) (%d+)$')}
 local UserInfo = LuaTele.getUser(UserId[2])
 if UserInfo.luatele == "error" and UserInfo.code == 6 then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n• عذرآ لا تستطيع استخدام ايدي خطأ ","md",true)  
@@ -3858,7 +3858,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 if not msg.Originators and not Redis:get(FDFGERB.."FDFGERB:Status:SetId"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"• تم تعطيل (الرفع) من قبل المنشئين","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"• تم تعطيل (ال) من قبل المنشئين","md",true)
 end 
 if Redis:sismember(FDFGERB.."FDFGERB:Addictive:Group"..msg_chat_id,UserId[2]) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"• تم ترقيته ادمن  مسبقا ").Reply,"md",true)  
@@ -3876,7 +3876,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 if not msg.Originators and not Redis:get(FDFGERB.."FDFGERB:Status:SetId"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"• تم تعطيل (الرفع) من قبل المنشئين","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"• تم تعطيل (ال) من قبل المنشئين","md",true)
 end 
 if Redis:sismember(FDFGERB.."FDFGERB:Distinguished:Group"..msg_chat_id,UserId[2]) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"• تم ترقيته مميز  مسبقا ").Reply,"md",true)  
@@ -4310,7 +4310,7 @@ end
 Redis:set(FDFGERB.."FDFGERB:Status:BanId"..msg_chat_id,true) 
 return LuaTele.sendText(msg_chat_id,msg_id,"• تم تفعيل الحظر , الطرد , التقييد","md",true)
 end
-if TextMsg == 'الرفع' then
+if TextMsg == 'ال' then
 if not msg.Originators then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(5)..' ) ',"md",true)  
 end
@@ -4319,7 +4319,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 Redis:set(FDFGERB.."FDFGERB:Status:SetId"..msg_chat_id,true) 
-return LuaTele.sendText(msg_chat_id,msg_id,"• تم تفعيل الرفع ","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"• تم تفعيل ال ","md",true)
 end
 if TextMsg == 'الالعاب' then
 Redis:set(FDFGERB.."FDFGERB:Status:Games"..msg_chat_id,true) 
@@ -5016,7 +5016,7 @@ end
 end
 if text == 'المالك' then
 if msg.can_be_deleted_for_all_users == false then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n- البوت ليس ادمن في المجموعة يرجى رفعه وتفعيل الصلاحيات له *","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"\n- البوت ليس ادمن في المجموعة يرجى ه وتفعيل الصلاحيات له *","md",true)
 end
 local Info_Members = LuaTele.getSupergroupMembers(msg_chat_id, "Administrators", "*", 0, 200)
 local List_Members = Info_Members.members
@@ -5206,7 +5206,7 @@ end
 Redis:del(FDFGERB.."FDFGERB:Status:BanId"..msg_chat_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,"• تم تعطيل الحظر , الطرد , التقييد","md",true)
 end
-if TextMsg == 'الرفع' then
+if TextMsg == 'ال' then
 if not msg.Originators then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(5)..' ) ',"md",true)  
 end
@@ -5215,7 +5215,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 Redis:del(FDFGERB.."FDFGERB:Status:SetId"..msg_chat_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,"• تم تعطيل الرفع ","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"• تم تعطيل ال ","md",true)
 end
 if TextMsg == 'الالعاب' then
 Redis:del(FDFGERB.."FDFGERB:Status:Games"..msg_chat_id) 
@@ -6494,7 +6494,7 @@ end
 end
 LuaTele.sendText(msg_chat_id,msg_id,listAdmin,"md",true)  
 end
-if text == 'رفع الادمنيه' then
+if text == ' الادمنيه' then
 if not msg.Managers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(6)..' ) ',"md",true)  
 end
@@ -8550,7 +8550,7 @@ data = {
 {text = 'تعطيل الردود العامه', data = msg.sender.user_id..'/'.. 'unmute_ryplesudo'},{text = 'تفعيل الردود العامه', data = msg.sender.user_id..'/'.. 'mute_ryplesudo'},
 },
 {
-{text = 'تعطيل الرفع', data = msg.sender.user_id..'/'.. 'unmute_setadmib'},{text = 'تفعيل الرفع', data = msg.sender.user_id..'/'.. 'mute_setadmib'},
+{text = 'تعطيل ال', data = msg.sender.user_id..'/'.. 'unmute_setadmib'},{text = 'تفعيل ال', data = msg.sender.user_id..'/'.. 'mute_setadmib'},
 },
 {
 {text = 'تعطيل الطرد', data = msg.sender.user_id..'/'.. 'unmute_kickmembars'},{text = 'تفعيل الطرد', data = msg.sender.user_id..'/'.. 'mute_kickmembars'},
@@ -8616,7 +8616,7 @@ local protectionGroup = '\n• اعدادات حمايه المجموعه\n ━�
 ..'\n• الايدي بالصوره ➤ '..StatusIdPhoto
 ..'\n• الردود ➤ '..StatusReply
 ..'\n• الردود العامه ➤ '..StatusReplySudo
-..'\n• الرفع ➤ '..StatusSetId
+..'\n• ال ➤ '..StatusSetId
 ..'\n• الحظر • الطرد ➤ '..StatusBanId
 ..'\n• الالعاب ➤ '..StatusGames
 ..'\n• امر اطردني ➤ '..Statuskickme..'\n.'
@@ -9003,7 +9003,7 @@ end
 return LuaTele.sendText(msg_chat_id,msg_id,"\n• تم تنزيل الشخص من الرتب التاليه  "..dev..""..crr..""..cr..""..own..""..mod..""..vip.." ","md",true)  
 end
 
-if text == ('رفع مشرف') and msg.reply_to_message_id ~= 0 then
+if text == (' مشرف') and msg.reply_to_message_id ~= 0 then
 if not msg.TheBasics then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(4)..' ) ',"md",true)  
 end
@@ -9027,7 +9027,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,"\n• عذرآ لا تستطيع ا�
 end
 local SetAdmin = LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'administrator',{1 ,1, 0, 0, 0, 0, 0 , 0, 0, 0, 0, 0, ''})
 if SetAdmin.code == 3 then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n• لا يمكنني رفعه ليس لدي صلاحيات ","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n• لا يمكنني ه ليس لدي صلاحيات ","md",true)  
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
@@ -9039,8 +9039,8 @@ data = {
 }
 return LuaTele.sendText(msg_chat_id, msg_id, "• صلاحيات المستخدم • ", 'md', false, false, false, false, reply_markup)
 end
-if text and text:match('^رفع مشرف @(%S+)$') then
-local UserName = text:match('^رفع مشرف @(%S+)$')
+if text and text:match('^ مشرف @(%S+)$') then
+local UserName = text:match('^ مشرف @(%S+)$')
 if not msg.TheBasics then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(4)..' ) ',"md",true)  
 end
@@ -9066,7 +9066,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,"\n• عذرآ لا تستطيع ا�
 end
 local SetAdmin = LuaTele.setChatMemberStatus(msg.chat_id,UserId_Info.id,'administrator',{1 ,1, 0, 0, 0, 0, 0 , 0, 0, 0, 0, 0, ''})
 if SetAdmin.code == 3 then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n• لا يمكنني رفعه ليس لدي صلاحيات ","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n• لا يمكنني ه ليس لدي صلاحيات ","md",true)  
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
@@ -9102,7 +9102,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,"\n• عذرآ لا تستطيع ا�
 end
 local SetAdmin = LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'administrator',{0 ,0, 0, 0, 0, 0, 0 ,0, 0})
 if SetAdmin.code == 400 then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n• لست انا من قام برفعه ","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n• لست انا من قام به ","md",true)  
 end
 if SetAdmin.code == 3 then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n• لا يمكنني تنزيله ليس لدي صلاحيات ","md",true)  
@@ -9136,7 +9136,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,"\n• عذرآ لا تستطيع ا�
 end
 local SetAdmin = LuaTele.setChatMemberStatus(msg.chat_id,UserId_Info.id,'administrator',{0 ,0, 0, 0, 0, 0, 0 ,0, 0})
 if SetAdmin.code == 400 then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n• لست انا من قام برفعه ","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n• لست انا من قام به ","md",true)  
 end
 if SetAdmin.code == 3 then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n• لا يمكنني تنزيله ليس لدي صلاحيات ","md",true)  
@@ -9851,7 +9851,7 @@ SilentGroup = 'غير مكتوم'
 end
 LuaTele.sendText(msg_chat_id,msg_id,"\n• معلومات الكشف \n━━━━━"..'\n• الحظر العام : '..BanAll..'\n• الحظر : '..BanGroup..'\n• الكتم : '..SilentGroup..'\n• التقييد : '..Restricted..'',"md",true)  
 end
-if text == 'رفع القيود' and msg.reply_to_message_id ~= 0 then
+if text == ' القيود' and msg.reply_to_message_id ~= 0 then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
 if UserInfo.message == "Invalid user ID" then
@@ -9901,10 +9901,10 @@ Redis:srem(FDFGERB.."FDFGERB:SilentGroup:Group"..msg_chat_id,Message_Reply.sende
 else
 SilentGroup = ''
 end
-LuaTele.sendText(msg_chat_id,msg_id,"\n• تم رفع القيود عنه : ( "..BanAll..BanGroup..SilentGroup..Restricted..'}',"md",true)  
+LuaTele.sendText(msg_chat_id,msg_id,"\n• تم  القيود عنه : ( "..BanAll..BanGroup..SilentGroup..Restricted..'}',"md",true)  
 end
-if text and text:match('^رفع القيود @(%S+)$') then
-local UserName = text:match('^رفع القيود @(%S+)$')
+if text and text:match('^ القيود @(%S+)$') then
+local UserName = text:match('^ القيود @(%S+)$')
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص : ( '..Controller_Num(7)..' ) ',"md",true)  
 end
@@ -9956,7 +9956,7 @@ Redis:srem(FDFGERB.."FDFGERB:SilentGroup:Group"..msg_chat_id,UserId_Info.id)
 else
 SilentGroup = ''
 end
-LuaTele.sendText(msg_chat_id,msg_id,"\n• تم رفع القيود عنه : ( "..BanAll..BanGroup..SilentGroup..Restricted..'}',"md",true)  
+LuaTele.sendText(msg_chat_id,msg_id,"\n• تم  القيود عنه : ( "..BanAll..BanGroup..SilentGroup..Restricted..'}',"md",true)  
 end
 
 if text == 'وضع كليشه المطور' then
@@ -11115,7 +11115,7 @@ end
 end
 
 
-if text == "ريباك" or text == "بوت" then
+if text == "يابوت" or text == "بوت" then
   local BotName = {
       "نعم ?",
       "يارب يكون موضوع مهم بس",
@@ -11702,7 +11702,7 @@ name = string.gsub(name,"العمر","ما هو الشيء الذي كلما ط�
 name = string.gsub(name,"القلم","ما هو الشيئ الذي يكتب ولا يقرأ ؟")
 name = string.gsub(name,"المشط","له أسنان ولا يعض ما هو ؟ ")
 name = string.gsub(name,"الحفره","ما هو الشيئ اذا أخذنا منه ازداد وكبر ؟")
-name = string.gsub(name,"البحر","ما هو الشيئ الذي يرفع اثقال ولا يقدر يرفع مسمار ؟")
+name = string.gsub(name,"البحر","ما هو الشيئ الذي ي اثقال ولا يقدر ي مسمار ؟")
 name = string.gsub(name,"الثلج","انا ابن الماء فان تركوني في الماء مت فمن انا ؟")
 name = string.gsub(name,"الاسفنج","كلي ثقوب ومع ذالك احفض الماء فمن اكون ؟")
 name = string.gsub(name,"الصوت","اسير بلا رجلين ولا ادخل الا بالاذنين فمن انا ؟")
@@ -11953,12 +11953,12 @@ end
 Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'تعط','تعطيل الايدي بالصوره')
 Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'تفع','تفعيل الايدي بالصوره')
 Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'ا','ايدي')
-Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'م','رفع مميز')
-Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'اد', 'رفع ادمن')
-Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'مد','رفع مدير')
-Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'من', 'رفع منشئ')
-Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'اس', 'رفع منشئ اساسي')
-Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'C','رفع C')
+Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'م',' مميز')
+Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'اد', ' ادمن')
+Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'مد',' مدير')
+Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'من', ' منشئ')
+Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'اس', ' منشئ اساسي')
+Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'C',' C')
 Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'تك','تنزيل الكل')
 Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'ر','الرابط')
 Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'رر','الردود')
@@ -11967,18 +11967,18 @@ Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'رد'
 Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'سح','مسح سحكاتي')
 Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'غ','غنيلي')
 Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'رس','رسائلي')
-Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'CM','رفع CM')
+Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..'CM',' CM')
 
 return LuaTele.sendText(msg_chat_id,msg_id,[[
 • تم ترتيب الاوامر بالشكل التالي ~
 • ايدي • ا .
-• رفع مميز • م .
-• رفع ادمن • اد .
-• رفع مدير • مد . 
-• رفع منشى • من . 
-• رفع منشئ الاساسي • اس  .
-• رفع C • C .
-• رفع CM • CM .
+•  مميز • م .
+•  ادمن • اد .
+•  مدير • مد . 
+•  منشى • من . 
+•  منشئ الاساسي • اس  .
+•  C • C .
+•  CM • CM .
 • تنزيل الكل • تك .
 • تعطيل الايدي بالصوره • تعط .
 • تفعيل الايدي بالصوره • تفع .
@@ -12015,7 +12015,7 @@ local CmdStart = '\n• أهلآ بك في بوت '..(Redis:get(FDFGERB.."FDFGER
 '\n• اختصاص البوت حماية المجموعات'..
 '\n• لتفعيل البوت عليك اتباع مايلي ...'..
 '\n• اضف البوت الى مجموعتك'..
-'\n• ارفعه ادمن  مشرف '..
+'\n• اه ادمن  مشرف '..
 '\n• ارسل كلمة  تفعيل  ليتم تفعيل المجموعه'..
 '\n•   ← ['..UserSudo..' ]'
 local reply_markup = LuaTele.replyMarkup{
@@ -12839,7 +12839,7 @@ Redis:srem(FDFGERB.."FDFGERB:SilentGroup:Group"..ChatId,listYt[2])
 Redis:srem(FDFGERB.."FDFGERB:BanGroup:Group"..ChatId,listYt[2]) 
 LuaTele.setChatMemberStatus(ChatId,listYt[2],'restricted',{1,1,1,1,1,1,1,1,1})
 LuaTele.setChatMemberStatus(ChatId,listYt[2],'restricted',{1,1,1,1,1,1,1,1})
-LuaTele.editMessageText(ChatId,Msg_id,"• تم رفع القيود عنه", 'md')
+LuaTele.editMessageText(ChatId,Msg_id,"• تم  القيود عنه", 'md')
 end
 end
 
@@ -12982,16 +12982,16 @@ data = {
 }
 }
 local TextHelp = [[
-∷ الرفع والتنزيل ∷
+∷ ال والتنزيل ∷
 
 * اوامر الادمن *
-رفع | تنزيل
+ | تنزيل
 ━ مميز
 
 ━ مسح المميزين
 
 * اوامر المدير *
-رفع | تنزيل
+ | تنزيل
 ━ مميز
 ━ ادمن
 
@@ -12999,7 +12999,7 @@ local TextHelp = [[
 ━ مسح الادمنيه
 
 * اوامر المنشئ *
-رفع | تنزيل
+ | تنزيل
 ━ مميز
 ━ ادمن
 ━ مدير
@@ -13010,7 +13010,7 @@ local TextHelp = [[
 ━ مسح المدراء
 
 * اوامر المنشئ الاساسي *
-رفع | تنزيل
+ | تنزيل
 ━ مميز
 ━ ادمن
 ━ مدير
@@ -13031,7 +13031,7 @@ local TextHelp = [[
 ━ حظر | الغاء الحظر
 ━ تقييد | الغاء التقييد
 ━ كتم | الغاء الكتم
-━ رفع القيود
+━  القيود
 
 * اوامر المنع *
 ━ منع + الكلمة المراد منعها
@@ -13149,7 +13149,7 @@ local TextHelp = [[
 ━ الترحيب
 ━ الايدي
 ━ الايدي بالصوره
-━ الرفع
+━ ال
 ━ التحقق
 
 * التقييد *
@@ -13232,19 +13232,19 @@ data = {
 local TextHelp = [[
 ∷ اوامر التسليه ∷
 
-━ رفع - تنزيل : هطف
-━ رفع - تنزيل : بثر
-━ رفع - تنزيل : حمار
-━ رفع - تنزيل : كلب
-━ رفع - تنزيل : كلبه
-━ رفع - تنزيل : عتوي
-━ رفع - تنزيل : عتويه
-━ رفع - تنزيل : لحجي
-━ رفع - تنزيل : لحجيه
-━ رفع - تنزيل : خروفك
-━ رفع - تنزيل : خفيفه
-━ رفع - تنزيل : خفيف
-━ رفع بقلبي  : تنزيل من قلبي
+━  - تنزيل : هطف
+━  - تنزيل : بثر
+━  - تنزيل : حمار
+━  - تنزيل : كلب
+━  - تنزيل : كلبه
+━  - تنزيل : عتوي
+━  - تنزيل : عتويه
+━  - تنزيل : لحجي
+━  - تنزيل : لحجيه
+━  - تنزيل : خروفك
+━  - تنزيل : خفيفه
+━  - تنزيل : خفيف
+━  بقلبي  : تنزيل من قلبي
 ━ طلاق - زواج
 
 ━━━━━━━━━━━━━━━ 
@@ -13936,7 +13936,7 @@ local UserId = Text:match('(%d+)/unmute_setadmib')
 if tonumber(IdUser) == tonumber(UserId) then
 Redis:del(FDFGERB.."FDFGERB:Status:SetId"..ChatId) 
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '- رجوع', data =UserId..'/'.. 'listallAddorrem'},},}}
-LuaTele.editMessageText(ChatId,Msg_id,Reply_Status(IdUser,"• تم تعطيل امر الرفع").unLock, 'md', true, false, reply_markup)
+LuaTele.editMessageText(ChatId,Msg_id,Reply_Status(IdUser,"• تم تعطيل امر ال").unLock, 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/unmute_kickmembars') then
 local UserId = Text:match('(%d+)/unmute_kickmembars')
@@ -14007,7 +14007,7 @@ local UserId = Text:match('(%d+)/mute_setadmib')
 if tonumber(IdUser) == tonumber(UserId) then
 Redis:set(FDFGERB.."FDFGERB:Status:SetId"..ChatId,true) 
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '- رجوع', data =UserId..'/'.. 'listallAddorrem'},},}}
-LuaTele.editMessageText(ChatId,Msg_id,Reply_Status(IdUser,"• تم تفعيل امر الرفع").unLock, 'md', true, false, reply_markup)
+LuaTele.editMessageText(ChatId,Msg_id,Reply_Status(IdUser,"• تم تفعيل امر ال").unLock, 'md', true, false, reply_markup)
 end
 elseif Text and Text:match('(%d+)/mute_kickmembars') then
 local UserId = Text:match('(%d+)/mute_kickmembars')
@@ -14513,7 +14513,7 @@ data = {
 {text = 'تعطيل الردود العامه', data = IdUser..'/'.. 'unmute_ryplesudo'},{text = 'تفعيل الردود العامه', data = IdUser..'/'.. 'mute_ryplesudo'},
 },
 {
-{text = 'تعطيل الرفع', data = IdUser..'/'.. 'unmute_setadmib'},{text = 'تفعيل الرفع', data = IdUser..'/'.. 'mute_setadmib'},
+{text = 'تعطيل ال', data = IdUser..'/'.. 'unmute_setadmib'},{text = 'تفعيل ال', data = IdUser..'/'.. 'mute_setadmib'},
 },
 {
 {text = 'تعطيل الطرد', data = IdUser..'/'.. 'unmute_kickmembars'},{text = 'تفعيل الطرد', data = IdUser..'/'.. 'mute_kickmembars'},
