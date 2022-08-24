@@ -1496,7 +1496,7 @@ Redis:del(FDFGERB.."FDFGERB:Command:Reids:Group:New"..msg_chat_id)
 Redis:srem(FDFGERB.."FDFGERB:Command:List:Group"..msg_chat_id,text)
 LuaTele.sendText(msg_chat_id,msg_id,"• تم ازالة هاذا ↢ ( "..text.." ) ","md",true)
 else
-LuaTele.sendText(msg_chat_id,msg_id,"• لايوجد امر اسمه كذا ","md",true)
+LuaTele.sendText(msg_chat_id,msg_id,"• لايوجد امر ه كذا ","md",true)
 end
 Redis:del(FDFGERB.."FDFGERB:Command:Reids:Group:Del"..msg_chat_id..":"..msg.sender.user_id)
 return false
@@ -1512,7 +1512,7 @@ local NewCmd = Redis:get(FDFGERB.."FDFGERB:Command:Reids:Group:New"..msg_chat_id
 Redis:set(FDFGERB.."FDFGERB:Get:Reides:Commands:Group"..msg_chat_id..":"..text,NewCmd)
 Redis:sadd(FDFGERB.."FDFGERB:Command:List:Group"..msg_chat_id,text)
 Redis:del(FDFGERB.."FDFGERB:Command:Reids:Group:End"..msg_chat_id..":"..msg.sender.user_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"• تم حفظ الامر باسم ↢ ( "..text..' ) ',"md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"• تم حفظ الامر ب ↢ ( "..text..' ) ',"md",true)
 end
 if Redis:get(FDFGERB.."FDFGERB:Broadcasting:Groups:Pin" .. msg_chat_id .. ":" .. msg.sender.user_id) then 
 if text == "الغاء" or text == 'الغاء الامر •' then   
@@ -1779,11 +1779,11 @@ end
 if Redis:get(FDFGERB.."FDFGERB:Change:Name:Bot"..msg.sender.user_id) then 
 if text == "الغاء" or text == 'الغاء الامر' then   
 Redis:del(FDFGERB.."FDFGERB:Change:Name:Bot"..msg.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id, "\n• اهلا عزيزي , تم الغاء اسم البوت ","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id, "\n• اهلا عزيزي , تم الغاء  البوت ","md",true)  
 end 
 Redis:del(FDFGERB.."FDFGERB:Change:Name:Bot"..msg.sender.user_id) 
 Redis:set(FDFGERB.."FDFGERB:Name:Bot",text) 
-return LuaTele.sendText(msg_chat_id,msg_id, "• تم تغيير اسم البوت الى • "..text,"md",true)    
+return LuaTele.sendText(msg_chat_id,msg_id, "• تم تغيير  البوت الى • "..text,"md",true)    
 end 
 if Redis:get(FDFGERB.."FDFGERB:Change:Start:Bot"..msg.sender.user_id) then 
 if text == "الغاء" or text == 'الغاء الامر' then   
@@ -1918,7 +1918,7 @@ LuaTele.sendText(msg_chat_id,msg_id,[[
 ━━━━━
 • `#اليوزر` ↢ يوزر المستخدم
 • `#الرسائل` ↢ رسائل المستخدم
-• `#الاسم` ↢ اسم المستخدم
+• `#ال` ↢  المستخدم
 • `#الرتبه` ↢ رتبه المستخدم
 • `#الايدي` ↢ ايدي المستخدم
 ]],"md",true, false, false, false, reply_markup)
@@ -1959,7 +1959,7 @@ local TotalMsg = Total_message(NumMsg)
 local Status_Gps = msg.Name_Controller
 local NumMessageEdit = Redis:get(FDFGERB..'FDFGERB:Num:Message:Edit'..msg_chat_id..msg.sender.user_id) or 0
 local Text = Text:gsub('#اليوزر',(UserInfo.username or 'لا يوجد')) 
-local Text = Text:gsub('#الاسم',UserInfo.first_name)
+local Text = Text:gsub('#ال',UserInfo.first_name)
 local Text = Text:gsub('#الايدي',msg.sender.user_id)
 local Text = Text:gsub('#التعديل',NumMessageEdit)
 local Text = Text:gsub('#الرسائل',NumMsg)
@@ -2008,7 +2008,7 @@ local TotalMsg = Total_message(NumMsg)
 local Status_Gps = msg.Name_Controller
 local NumMessageEdit = Redis:get(FDFGERB..'FDFGERB:Num:Message:Edit'..msg_chat_id..msg.sender.user_id) or 0
 local Texingt = Texingt:gsub('#اليوزر',(UserInfo.username or 'لا يوجد')) 
-local Texingt = Texingt:gsub('#الاسم',UserInfo.first_name)
+local Texingt = Texingt:gsub('#ال',UserInfo.first_name)
 local Texingt = Texingt:gsub('#الايدي',msg.sender.user_id)
 local Texingt = Texingt:gsub('#التعديل',NumMessageEdit)
 local Texingt = Texingt:gsub('#الرسائل',NumMsg)
@@ -2112,7 +2112,7 @@ LuaTele.sendText(msg_chat_id,msg_id,[[
 ━━━━━
 ‎• `#اليوزر` ↢ يوزر المستخدم
 ‎• `#الرسائل` ↢ رسائل المستخدم
-‎• `#الاسم` ↢ اسم المستخدم
+‎• `#ال` ↢  المستخدم
 ‎• `#الرتبه` ↢ رتبه المستخدم
 ‎• `#الايدي` ↢ ايدي المستخدم
 
@@ -8163,7 +8163,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 Redis:setex(FDFGERB.."FDFGERB:Welcome:Group" .. msg_chat_id .. "" .. msg.sender.user_id, 120, true)  
-return LuaTele.sendText(msg_chat_id,msg_id,"• ارسل لي الترحيب الان".."\n• تستطيع اضافة مايلي !\n• دالة عرض الاسم »{`name`}\n• دالة عرض المعرف »{`user`}\n• دالة عرض اسم المجموعه »{`NameCh`}","md",true)   
+return LuaTele.sendText(msg_chat_id,msg_id,"• ارسل لي الترحيب الان".."\n• تستطيع اضافة مايلي !\n• دالة عرض ال »{`name`}\n• دالة عرض المعرف »{`user`}\n• دالة عرض  المجموعه »{`NameCh`}","md",true)   
 end
 if text == "الترحيب" then 
 if not msg.Addictive then
@@ -8287,8 +8287,8 @@ LuaTele.setChatDescription(msg_chat_id, '')
 return LuaTele.sendText(msg_chat_id,msg_id,"• تم ازالة قوانين المجموعه","md",true)    
 end
 
-if text and text:match("^ضع اسم (.*)") or text and text:match("^وضع اسم (.*)") then 
-local NameChat = text:match("^ضع اسم (.*)") or text:match("^وضع اسم (.*)") 
+if text and text:match("^ضع  (.*)") or text and text:match("^وضع  (.*)") then 
+local NameChat = text:match("^ضع  (.*)") or text:match("^وضع  (.*)") 
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص : ( '..Controller_Num(7)..' ) ',"md",true)  
 end
@@ -8303,7 +8303,7 @@ if GetInfoBot(msg).Info == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• البوت ليس لديه صلاحيه تغيير المعلومات',"md",true)  
 end
 LuaTele.setChatTitle(msg_chat_id,NameChat)
-return LuaTele.sendText(msg_chat_id,msg_id,"• تم تغيير اسم المجموعه الى : "..NameChat,"md",true)    
+return LuaTele.sendText(msg_chat_id,msg_id,"• تم تغيير  المجموعه الى : "..NameChat,"md",true)    
 end
 
 if text == ("ضع صوره") then  
@@ -8728,7 +8728,7 @@ if Get_Chat.permissions.can_send_polls then
 polls = '❬ ✔️ ❭' else polls = '❬ ❌ ❭'
 end
 local permissions = '\n• صلاحيات المجموعه :\n━━━━━'..'\n• ارسال الويب : '..web..'\n• تغيير معلومات المجموعه : '..info..'\n• اضافه مستخدمين : '..invite..'\n• تثبيت الرسائل : '..pin..'\n• ارسال الميديا : '..media..'\n• ارسال الرسائل : '..messges..'\n• اضافه البوتات : '..other..'\n• ارسال استفتاء : '..polls..'\n'
-local TextChat = '\n• معلومات المجموعه :\n━━━━━'..' \n• عدد الادمنيه : ❬ '..Info_Chats.administrator_count..' ❭\n• عدد المحظورين : ❬ '..Info_Chats.banned_count..' ❭\n• عدد الاعضاء : ❬ '..Info_Chats.member_count..' ❭\n• عدد المقيديين : ❬ '..Info_Chats.restricted_count..' ❭\n• اسم المجموعه : ❬ ['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..') ❭'
+local TextChat = '\n• معلومات المجموعه :\n━━━━━'..' \n• عدد الادمنيه : ❬ '..Info_Chats.administrator_count..' ❭\n• عدد المحظورين : ❬ '..Info_Chats.banned_count..' ❭\n• عدد الاعضاء : ❬ '..Info_Chats.member_count..' ❭\n• عدد المقيديين : ❬ '..Info_Chats.restricted_count..' ❭\n•  المجموعه : ❬ ['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..') ❭'
 return LuaTele.sendText(msg_chat_id,msg_id, TextChat..permissions,"md",true)
 end
 if text == 'صلاحيات المجموعه' then
@@ -10156,7 +10156,7 @@ print('User Id : '..msg_user_send_id)
 LuaTele.sendText(msg_chat_id,msg_id, "• تم تحديث الملفات ","md",true)
 dofile('FDFGERB.lua')  
 end
-if text == "تغيير اسم البوت" then 
+if text == "تغيير  البوت" then 
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(1)..' ) ',"md",true)  
 end
@@ -10165,9 +10165,9 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 Redis:setex(FDFGERB.."FDFGERB:Change:Name:Bot"..msg.sender.user_id,300,true) 
-return LuaTele.sendText(msg_chat_id,msg_id,"• ارسل لي الاسم الان ","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"• ارسل لي ال الان ","md",true)  
 end
-if text == "حذف اسم البوت" then 
+if text == "حذف  البوت" then 
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(1)..' ) ',"md",true)  
 end
@@ -10176,7 +10176,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 Redis:del(FDFGERB.."FDFGERB:Name:Bot") 
-return LuaTele.sendText(msg_chat_id,msg_id,"• تم حذف اسم البوت ","md",true)   
+return LuaTele.sendText(msg_chat_id,msg_id,"• تم حذف  البوت ","md",true)   
 end
 if text == 'تنظيف المشتركين' then
 if not msg.ControllerBot then 
@@ -10547,7 +10547,7 @@ gg = Redis:get(FDFGERB.."nnonb"..yemsg.sender.user_id)
 uuuu = Redis:get(FDFGERB.."nnonbn"..yemsg.sender.user_id)
 pppp = Redis:get(FDFGERB.."zrffdcf"..yemsg.sender.user_id) or 0
 ballancee = Redis:get(FDFGERB.."nool:flotysb"..yemsg.sender.user_id) or 0
-LuaTele.sendText(msg.chat_id,msg.id, "•* الاسم ↢ *"..news.."\n*• الحساب ↢ *`"..cccc.."`\n*• بنك ↢ ( *"..gg.."* )\n• نوع ↢ ( *"..uuuu.."* )\n• الرصيد ↢ ( *"..ballancee.."* بتكوين 💸 )\n• الزرف ( *"..pppp.."* بتكوين 💸 )\n-*","md",true)
+LuaTele.sendText(msg.chat_id,msg.id, "•* ال ↢ *"..news.."\n*• الحساب ↢ *`"..cccc.."`\n*• بنك ↢ ( *"..gg.."* )\n• نوع ↢ ( *"..uuuu.."* )\n• الرصيد ↢ ( *"..ballancee.."* بتكوين 💸 )\n• الزرف ( *"..pppp.."* بتكوين 💸 )\n-*","md",true)
 else
 LuaTele.sendText(msg.chat_id,msg.id, "• ماعنده  حساب بنكي لازم يرسل ↢ ( `انشاء حساب بنكي` )","md",true)
 end
@@ -10776,7 +10776,7 @@ gg = Redis:get(FDFGERB.."nnonb"..msg.sender.user_id)
 uuuu = Redis:get(FDFGERB.."nnonbn"..msg.sender.user_id)
 pppp = Redis:get(FDFGERB.."zrffdcf"..msg.sender.user_id) or 0
 ballancee = Redis:get(FDFGERB.."nool:flotysb"..msg.sender.user_id) or 0
-LuaTele.sendText(msg.chat_id,msg.id, "• الاسم ↢ "..news.."\n• الحساب ↢ `"..cccc.."`\n• بنك ↢ ( "..gg.." )\n• نوع ↢ ( "..uuuu.." )\n• الرصيد ↢ ( "..ballancee.." بتكوين 🪙 )\n• الزرف ( "..pppp.." بتكوين 🪙 )\n-","md",true)
+LuaTele.sendText(msg.chat_id,msg.id, "• ال ↢ "..news.."\n• الحساب ↢ `"..cccc.."`\n• بنك ↢ ( "..gg.." )\n• نوع ↢ ( "..uuuu.." )\n• الرصيد ↢ ( "..ballancee.." بتكوين 🪙 )\n• الزرف ( "..pppp.." بتكوين 🪙 )\n-","md",true)
 else
 LuaTele.sendText(msg.chat_id,msg.id, "• ماعندك حساب بنكي ارسل ↢ ( `انشاء حساب بنكي` )","md",true)
 end
@@ -11116,8 +11116,19 @@ end
 
 
 if text == "ريباك" or text == "بوت" then
-LuaTele.sendText(msg.chat_id,msg.id, "نعم ؟","md",true)
+  local BotName = {
+      "نعم ?",
+      " يبن العاميه",
+      "يارب يكون موضوع مهم بس",
+      "هو يوم مهبب انا عارف..عاوز اي ؟",
+      "ياقلبة انا ها لبية",
+      " يا كفيف",
+      "مش شايف ي ولا اي ؟"
+      }
+LuaTele.sendText(msg.chat_id,msg.id,BotName[math.random(#BotName)],"md",true)
 end
+
+
 if text == "توب" or text == "التوب" then
 local reply_markup = LuaTele.replyMarkup{
 type = "inline",
@@ -11539,7 +11550,7 @@ local texting = {"كيف حالك بالمواقف الصعبة، صبور أم 
 "ما هي أسوأ الأشياء برأيك ؟ ",
 "ضع علامة @ وثالث شخص يجهز نفسه يعزمك على بيتزا🍕 ",
 "فنان او فنانة ودك تشوفه ؟ ",
-"أجمل اسم بنت من وجهة نظرك ؟ ",
+"أجمل  بنت من وجهة نظرك ؟ ",
 "شعورك الحالي في جُملة قصيرة ؟ ",
 "ما هي أمنيتك التي تتمناها أن تحدث ولم تحدث إلى الآن ؟ ",
 "ربحت تذكرة سفر لشخصين، مَن ستأخذ معك وإلى أين ؟ ",
@@ -11599,7 +11610,7 @@ local texting = {"كيف حالك بالمواقف الصعبة، صبور أم 
 "مارأيك باللطف.. هل فعلا اللطفاء نادرون؟ ",
 "هل أنت من الأشخاص الذين يسهل استفزازهم ؟ ",
 "مُشتاق ... ؟ ",
-"اسم تبتسم بمجرد ذكر اسمه أمامك ؟ ",
+" تبتسم بمجرد ذكر ه أمامك ؟ ",
 "أكثر شيء تهتم بشرائه ؟ ",
 "لو لك دعوة مُستجابة بماذا تدعو ؟ ",
 "أجمل مُسلسل شاهدته ؟ ",
@@ -11683,7 +11694,7 @@ name = string.gsub(name,"22","كم مره ينطبق عقربا الساعه ع�
 name = string.gsub(name,"غلط","ما هي الكلمه الوحيده التي تلفض غلط دائما ؟ ")
 name = string.gsub(name,"كم الساعه","ما هو السؤال الذي تختلف اجابته دائما ؟")
 name = string.gsub(name,"البيتنجان","جسم اسود وقلب ابيض وراس اخظر فما هو ؟")
-name = string.gsub(name,"البيض","ماهو الشيئ الذي اسمه على لونه ؟")
+name = string.gsub(name,"البيض","ماهو الشيئ الذي ه على لونه ؟")
 name = string.gsub(name,"المرايه","ارى كل شيئ من دون عيون من اكون ؟ ")
 name = string.gsub(name,"الضوء","ما هو الشيئ الذي يخترق الزجاج ولا يكسره ؟")
 name = string.gsub(name,"الهواء","ما هو الشيئ الذي يسير امامك ولا تراه ؟")
@@ -12062,7 +12073,7 @@ data = {
 {text = 'مسح قائمه MY',type = 'text'},{text = 'مسح قائمه M',type = 'text'},{text = 'مسح قائمه العام', type = 'text'},
 },
 {
-{text = 'تغيير اسم البوت',type = 'text'},{text = 'حذف اسم البوت', type = 'text'},
+{text = 'تغيير  البوت',type = 'text'},{text = 'حذف  البوت', type = 'text'},
 },
 {
 {text = 'الاشتراك الاجباري',type = 'text'},{text = 'تغيير الاشتراك الاجباري',type = 'text'},
@@ -12188,7 +12199,7 @@ end
 Redis:del(FDFGERB.."FDFGERB:Start:Bot") 
 return LuaTele.sendText(msg_chat_id,msg_id,"• تم حذف كليشه Start ","md",true)   
 end
-if text == 'تغيير اسم البوت' then 
+if text == 'تغيير  البوت' then 
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(1)..' ) ',"md",true)  
 end
@@ -12197,9 +12208,9 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 Redis:setex(FDFGERB.."FDFGERB:Change:Name:Bot"..msg.sender.user_id,300,true) 
-return LuaTele.sendText(msg_chat_id,msg_id,"• ارسل لي الاسم الان ","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"• ارسل لي ال الان ","md",true)  
 end
-if text == 'مسح اسم البوت' then 
+if text == 'مسح  البوت' then 
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n• الامر يخص ( '..Controller_Num(1)..' ) ',"md",true)  
 end
@@ -12208,7 +12219,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 Redis:del(FDFGERB.."FDFGERB:Name:Bot") 
-return LuaTele.sendText(msg_chat_id,msg_id,"• تم مسح اسم البوت ","md",true)   
+return LuaTele.sendText(msg_chat_id,msg_id,"• تم مسح  البوت ","md",true)   
 end
 if text and text:match("^تعين عدد الاعضاء (%d+)$") then
 if not msg.ControllerBot then 
@@ -12703,7 +12714,7 @@ local keys = Redis:keys(FDFGERB..''..'-100'..data.supergroup.id)
 for i = 1, #keys do
 Redis:del(keys[i])
 end
-return LuaTele.sendText(Sudo_Id,0,'\n• تم طرد البوت من مجموعه جديده \n• اسم المجموعه : '..Get_Chat.title..'\n• ايدي المجموعه :`-100'..data.supergroup.id..'`\n• تم مسح جميع البيانات المتعلقه بالمجموعه',"md")
+return LuaTele.sendText(Sudo_Id,0,'\n• تم طرد البوت من مجموعه جديده \n•  المجموعه : '..Get_Chat.title..'\n• ايدي المجموعه :`-100'..data.supergroup.id..'`\n• تم مسح جميع البيانات المتعلقه بالمجموعه',"md")
 end
 elseif data and data.luatele and data.luatele == "updateMessageSendSucceeded" then
 local msg = data.message
@@ -14245,8 +14256,8 @@ if num <= 10 then
 local zwga_id = Redis:get(FDFGERB..ChatId..v[2].."rgalll2:")
 local user_name = LuaTele.getUser(v[2]).first_name
 local user_nambe = LuaTele.getUser(zwga_id).first_name
-local user_tag = '['..user_name..'](tg://user?id='..v[2]..')' or 'الاسم سبام'
-local user_zog = '['..user_nambe..'](tg://user?id='..zwga_id..')' or 'الاسم سبام'
+local user_tag = '['..user_name..'](tg://user?id='..v[2]..')' or 'ال سبام'
+local user_zog = '['..user_nambe..'](tg://user?id='..zwga_id..')' or 'ال سبام'
 local mony = v[1]
 local emo = emoji[k]
 num = num + 1
