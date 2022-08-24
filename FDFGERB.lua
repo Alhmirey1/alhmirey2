@@ -3747,8 +3747,8 @@ return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.use
 end
 end
 end
-if text and text:match('^ (.*) (%d+)$') then
-local UserId = {text:match('^ (.*) (%d+)$')}
+if text and text:match('^رفع (.*) (%d+)$') then
+local UserId = {text:match('^رفع (.*) (%d+)$')}
 local UserInfo = LuaTele.getUser(UserId[2])
 if UserInfo.luatele == "error" and UserInfo.code == 6 then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n• عذرآ لا تستطيع استخدام ايدي خطأ ","md",true)  
