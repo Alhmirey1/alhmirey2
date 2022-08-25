@@ -11054,9 +11054,9 @@ local check_time = Redis:ttl(FDFGERB.."hramep" .. UserNameyr)
 rr = oger(check_time)
 return LuaTele.sendText(msg.chat_id, msg.id,"• قبل شوي حولو له \n• تكدر تحوله بعد "..rr.." دقيقة") 
 end 
-local UserNameyr = math.floor(UserNamey / 100 * 2)
-UserNameyy = math.floor(UserNamey - UserNameyr)
-Redis:incrby(FDFGERB.."nool:flotysb"..fsvhhh ,UserNameyy)
+UserNameyr = UserNamey / 100 * 2
+UserNameyy = UserNamey - UserNameyr
+Redis:incrby(FDFGERB.."nool:flotysb"..fsvhhh ,floor(UserNameyy))
 Redis:decrby(FDFGERB.."nool:flotysb"..msg.sender.user_id ,UserNamey)
 Redis:setex(FDFGERB.."polici" .. msg.sender.user_id,600, true)
 Redis:setex(FDFGERB.."hramep" ..UserNamey ,600, true)
