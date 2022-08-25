@@ -11061,7 +11061,21 @@ Redis:incrby(FDFGERB.."nool:flotysb"..fsvhhh ,UserNameyy)
 Redis:decrby(FDFGERB.."nool:flotysb"..msg.sender.user_id ,UserNamey)
 Redis:setex(FDFGERB.."polici" .. msg.sender.user_id,600, true)
 Redis:setex(FDFGERB.."hramep" ..UserNamey ,600, true)
-LuaTele.sendText(msg.chat_id,msg.id, "*حوالة صادرة من البنك ↢ ( *"..gg.."* )\n\nالمرسل : *"..news.."\n*الحساب رقم : `*"..cccc.."`\n*نوع البطاقة : *"..uuuu.."\n*المستلم : *"..newss.."\n*الحساب رقم : `*"..text.."`\n*البنك : *"..hsabe.."\n*نوع البطاقة : *"..nouu.."\n"..nsba.."\n*المبلغ : *"..UserNameyy.."* بتكوين 💸*","md",true)
+LuaTele.sendText(msg.chat_id,msg.id, "
+  *حوالة صادرة من بنك
+  ↢ ( * "..gg.."* )
+  \n\nالمرسل :   *"..news.."
+  \n*الحساب رقم :` *"..cccc.."
+  `\n*نوع البطاقة :* "..uuuu.."\n
+  *المستلم: *  "..newss.."\n
+  *الحساب رقم : `* "..text.."`\n
+  *البنك : *"..hsabe.."\n
+  *نوع البطاقة : *"..nouu.."\n
+  "..nsba.."\n*المبلغ :
+  *"..UserNameyy.."* بتكوين 💸*
+  "
+  ,"md",true)
+
 LuaTele.sendText(fsvhhh,0, "*حوالة واردة من البنك ↢ ( *"..gg.."* )\n\n*المرسل : *"..news.."\n*الحساب رقم : `*"..cccc.."`\n*نوع البطاقة : *"..uuuu.."\n*المبلغ : *"..UserNameyy.."* بتكوين 💸*","md",true)
 Redis:del(FDFGERB.."trans" .. msg.chat_id .. ":" .. msg.sender.user_id) 
 Redis:del(FDFGERB.."transn" .. msg.sender.user_id)
