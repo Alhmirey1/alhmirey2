@@ -11049,14 +11049,15 @@ end
 
 if gg == hsabe then
 nsba = "خصمت 2% لبنك "..hsabe..""
+UserNameyr = math.floor(UserNamey / 100 * 2)
+UserNameyy = math.floor(UserNamey - UserNameyr)
 if Redis:get(FDFGERB.."hramep" .. UserNameyr) then  
 local check_time = Redis:ttl(FDFGERB.."hramep" .. UserNameyr)
 rr = oger(check_time)
 return LuaTele.sendText(msg.chat_id, msg.id,"• قبل شوي حولو له \n• تكدر تحوله بعد "..rr.." دقيقة") 
 end 
-UserNameyr = UserNamey / 100 * 2
-UserNameyy = UserNamey - UserNameyr
-Redis:incrby(FDFGERB.."nool:flotysb"..fsvhhh ,floor(UserNameyy))
+
+Redis:incrby(FDFGERB.."nool:flotysb"..fsvhhh ,UserNameyy)
 Redis:decrby(FDFGERB.."nool:flotysb"..msg.sender.user_id ,UserNamey)
 Redis:setex(FDFGERB.."polici" .. msg.sender.user_id,600, true)
 Redis:setex(FDFGERB.."hramep" ..UserNamey ,600, true)
